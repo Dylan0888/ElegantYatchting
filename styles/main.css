@@ -1,0 +1,81 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1000px;
+    background-color: #33323C;
+    margin-top: 55px;
+}
+
+.image-container{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container .img{
+    background-image: url(../imgs/yachtimg.jpg);
+    position: relative;
+    width: 100%;   
+    height: 800px;
+    background-size:cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+    isolation: isolate; /* allows items to be stacked> */
+}
+
+.image-container .img::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.565), rgba(0, 0, 0, 0));;
+
+}
+
+.img-title-container{
+    position: absolute;
+    color: white;
+    bottom: 300px;
+    font-size: 21px;
+}
+
+.img-phrase-container{
+    position: absolute;
+    bottom: 275px;
+    color: rgba(250, 251, 252, 0.7);
+    font-size: 16px;
+}
+
+.img-button-container{
+    position: absolute;
+    bottom: 220px;
+}
+
+.start-tour{
+    padding: 15px 30px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.welcome-message-container{  
+    max-width: 800px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    color: white;
+    margin:80px auto;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-message-container header{
+    width: fit-content;
+    padding-bottom: 3px;
+    border-bottom: 2px solid white;
+}
+
+.welcome-message-container body{
+    display: inline-block;
+}
