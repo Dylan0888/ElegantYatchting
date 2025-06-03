@@ -1,3 +1,51 @@
 footer{
-   
+    background-color: black;
+    height: 200px;
+    width: 100%;
+    color: white;
+}
+
+.footer-container{
+    border: 1px solid white;
+    height: 100%;
+}
+
+.copyright-container{
+    background-color: lightblue;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright-container p{
+
+}
+
+.footer-links-container{
+    background-color: lightgreen;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+}
+
+.footer-links li{
+    padding: 0px 10px;
+    color: white;
+}
+
+.footer-links a{
+    text-decoration: none;
+}
+
+.social-links-container{
+    background-color: lightpink;
+    height: 30%;
 }
