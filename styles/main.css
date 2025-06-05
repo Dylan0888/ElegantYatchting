@@ -53,6 +53,7 @@ header{
 
 .img-title-container h2{
     text-shadow: 2px 2px rgba(0, 0, 0, 0.525);
+
 }
 
 .img-phrase-container{
@@ -96,16 +97,18 @@ header{
 .welcome{
     display: flex;
     width: 100%;
-    height: 300px;
+    height: 350px;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .welcome-message-container{  
     display: flex;
     flex-direction: column;
-    width: 70%;
-    padding: 10px 10px;
+    width: 50%;
+    padding: 15px 15px;
     border-radius: 10px;
     color: white;
     margin:80px auto;
@@ -113,11 +116,18 @@ header{
 }
 
 .welcome-message-container header{
-    width: fit-content;
-    padding-bottom: 3px;
+}
+
+.welcome-message-container h2{
+    display: inline-block;
     border-bottom: 2px solid white;
 }
 
 .welcome-message-container body{
     display: inline-block;
+}
+
+.welcome p{
+    padding: 0px;
+    margin: 0px;
 }

@@ -1,30 +1,32 @@
 footer{
     background-color: black;
-    height: 200px;
+    height: 180px;
     width: 100%;
     color: white;
+    padding: 10px;
+    font-size: 15px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
 .footer-container{
-    border: 1px solid white;
     height: 100%;
 }
 
 .copyright-container{
-    background-color: lightblue;
-    height: 20%;
+    height: 35px;
+    padding: 5px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .copyright-container p{
-
+    font-size: 20px;
 }
 
 .footer-links-container{
-    background-color: lightgreen;
-    height: 30%;
+    height: 35px;
+    padding: 5px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,15 +39,79 @@ footer{
 }
 
 .footer-links li{
-    padding: 0px 10px;
+    padding: 0px 5px;
     color: white;
 }
 
 .footer-links a{
     text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links li:hover{
+    color: rgba(65, 198, 255, 0.906);
 }
 
 .social-links-container{
-    background-color: lightpink;
-    height: 30%;
+    height: 40px;
+}
+
+.social-icon-container{
+    width: 30%;
+    display: flex;
+    padding: 5px 0px;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+    height: 100%;
+}
+
+.icon-source-container{
+    height:20px;
+    display: flex;
+    padding: 5px 0px;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-source-container p{
+    margin: 0px;
+    color: rgba(113, 113, 113, 0.657);
+}
+
+/*--- Footer icons ---*/
+.facebook-icon, .instagram-icon, .twitter-icon{
+    height: 35px;
+    width: 35px;
+    margin: 0px 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-image 0.2s;
+}
+
+.facebook-icon{
+    background-image: url(../imgs/footer-icons/facebook-coloured.png);
+}
+
+.facebook-icon:hover{
+    background-image: url(../imgs/footer-icons/facebook-coloured.png);
+}
+
+.instagram-icon{
+    background-image: url(../imgs/footer-icons/instagram-coloured.png);
+}
+
+.instagram-icon:hover{
+    background-image: url(../imgs/footer-icons/instagram-coloured.png);
+}
+.twitter-icon{
+    background-image: url(../imgs/footer-icons/twitter-coloured.png);
+}
+
+.twitter-icon:hover{
+    background-image: url(../imgs/footer-icons/twitter-coloured.png);
 }
