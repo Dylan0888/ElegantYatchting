@@ -115,3 +115,14 @@ footer{
 .twitter-icon:hover{
     background-image: url(../imgs/footer-icons/twitter-coloured.png);
 }
+
+@media screen and (max-width: 500px) {
+    .copyright-container p{
+    font-size: 16px;
+    }
+
+    .social-icon-container{
+        width: 40%;
+    }
+
+}
