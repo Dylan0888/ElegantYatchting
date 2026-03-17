@@ -1,10 +1,11 @@
+import Nav from "./components/Nav"
 
 function App() {
 
 
   return (
     <>
-     <button className="btn bg-amber-700">Press me </button> 
+      <Nav />
     </>
   )
 }
