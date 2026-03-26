@@ -21,7 +21,10 @@ const Carousel = ({ images }: CarouselProps) => {
 
       <div className="flex w-full justify-center gap-2 py-2">
         {images.map((_, index) => (
-          <a key={index} href={`#item${index + 1}`} className="btn btn-xs">
+          <a key={index} 
+             href={`#item${index + 1}`} 
+             className="btn btn-xs rounded-lg border-neutral-500 text-neutral-500 hover:bg-neutral-500 hover:text-white"
+            >
             {index + 1}
           </a>
         ))}
