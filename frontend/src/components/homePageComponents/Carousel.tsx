@@ -101,6 +101,28 @@ const Carousel = ({ images }: CarouselProps) => {
       >
         ❯
       </button>
+
+      {/* pill style indicators */ }
+      {/* <div className="absolute bottom-4 left-1/2 -translate-x-1/2 
+                flex items-center gap-2 
+                bg-black/30 backdrop-blur-md 
+                px-3 py-1.5 rounded-full">
+
+        {images.map((_, index) => (
+          <div
+            key={index}
+            className={`transition-all duration-300 ease-in-out
+                  
+                  ${index === currentIndex
+                ? "w-6 h-2 bg-white rounded-full"   // active (oval)
+                : "w-2 h-2 bg-white/60 rounded-full"} // inactive (circle)
+                  `}
+          />
+        ))}
+      </div> */}
+
+
+
     </div>
   );
 };
