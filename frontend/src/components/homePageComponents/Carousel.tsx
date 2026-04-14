@@ -40,7 +40,9 @@ const Carousel = ({ images }: CarouselProps) => {
 
   return (
     <div
-      className="relative w-full "
+      className="relative w-full h-100 md:h-125 lg:h-150 xl:h-175 mx-auto mt-8
+                 overflow-hidden rounded-2xl
+                 bg-gray-800/20 backdrop-blur-sm border border-gray-700/50"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -103,7 +105,7 @@ const Carousel = ({ images }: CarouselProps) => {
       </button>
 
       {/* pill style indicators */ }
-      {/* <div className="absolute bottom-4 left-1/2 -translate-x-1/2 
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 
                 flex items-center gap-2 
                 bg-black/30 backdrop-blur-md 
                 px-3 py-1.5 rounded-full">
@@ -119,7 +121,7 @@ const Carousel = ({ images }: CarouselProps) => {
                   `}
           />
         ))}
-      </div> */}
+      </div>
 
 
 
