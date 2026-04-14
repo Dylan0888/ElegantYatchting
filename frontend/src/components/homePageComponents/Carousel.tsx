@@ -32,17 +32,17 @@ const Carousel = ({ images }: CarouselProps) => {
     touchStartX.current = null;
   };
 
-  // 👉 Auto-slide
-  useEffect(() => {
-    const interval = setInterval(goRight, 15000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+  // Auto-slide
+  // useEffect(() => {
+  //   const interval = setInterval(goRight, 15000);
+  //   return () => clearInterval(interval);
+  // }, [images.length]);
 
   return (
     <div
-      className="relative w-full h-100 md:h-125 lg:h-150 xl:h-175 mx-auto mt-8
+      className="relative w-full h-100 md:h-125 lg:h-150 xl:h-170 mx-auto mt-8
                  overflow-hidden rounded-2xl
-                 bg-gray-800/20 backdrop-blur-sm border border-gray-700/50"
+                 bg-gray-800/20 backdrop-blur-xs border border-gray-700/50"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -56,7 +56,7 @@ const Carousel = ({ images }: CarouselProps) => {
             <img
               key={index}
               src={src}
-              className="w-full shrink-0"
+              className="w-full h-full object-cover "
               alt={`Slide ${index}`}
             />
           ))}
