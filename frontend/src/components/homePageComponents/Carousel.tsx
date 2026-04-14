@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from "react";
+import type { ImageStructure } from "../../types/types";
 
 interface CarouselProps {
-  images: string[];
+  images: ImageStructure[];
 }
 
 const Carousel = ({ images }: CarouselProps) => {
@@ -13,10 +14,12 @@ const Carousel = ({ images }: CarouselProps) => {
   };
 
   const goRight = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) =>
+      prev === images.length - 1 ? 0 : prev + 1
+    );
   };
 
-  // 👉 Touch handlers (mobile swipe)
+  //  Touch handlers
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -32,11 +35,11 @@ const Carousel = ({ images }: CarouselProps) => {
     touchStartX.current = null;
   };
 
-  // Auto-slide
-  // useEffect(() => {
-  //   const interval = setInterval(goRight, 15000);
-  //   return () => clearInterval(interval);
-  // }, [images.length]);
+  //  Auto-slide
+  useEffect(() => {
+    const interval = setInterval(goRight, 15000);
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
     <div
@@ -52,23 +55,32 @@ const Carousel = ({ images }: CarouselProps) => {
           className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {images.map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              className="w-full h-full object-cover "
-              alt={`Slide ${index}`}
-            />
+          {images.map((img, index) => (
+            <picture key={index} className="w-full shrink-0">
+              {/* Mobile (small image) */}
+              {img.smallImg && (
+                <source
+                  media="(max-width: 768px)"
+                  srcSet={img.smallImg}
+                />
+              )}
+
+              {/* Desktop (large image fallback) */}
+              <img
+                src={img.largeImg || img.smallImg || ""}
+                className="w-full h-full object-cover"
+                alt={img.alt || `Slide ${index}`}
+              />
+            </picture>
           ))}
         </div>
       </div>
 
       {/* Gradient Overlay */}
       <div className="pointer-events-none absolute inset-0 
-                bg-linear-to-b 
+                bg-gradient-to-b 
                 from-gray-900/40 via-transparent to-gray-900/40 
                 rounded-2xl" />
-
 
       {/* Left Button */}
       <button
@@ -78,10 +90,8 @@ const Carousel = ({ images }: CarouselProps) => {
                    bg-gray-700/40 text-white text-2xl
                    backdrop-blur-sm border border-black/60
                    rounded-l-2xl
-                   
                    opacity-0 hover:opacity-100
                    transition-all duration-300
-
                    hover:shadow-[8px_0_20px_rgba(0,0,0,0.5)]"
       >
         ❮
@@ -95,16 +105,14 @@ const Carousel = ({ images }: CarouselProps) => {
                    bg-gray-700/40 text-white text-2xl
                    backdrop-blur-sm border border-black/60
                    rounded-r-2xl
-                   
                    opacity-0 hover:opacity-100
                    transition-all duration-300
-
                    hover:shadow-[-8px_0_20px_rgba(0,0,0,0.5)]"
       >
         ❯
       </button>
 
-      {/* pill style indicators */ }
+      {/* Indicators */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 
                 flex items-center gap-2 
                 bg-black/30 backdrop-blur-md 
@@ -114,17 +122,13 @@ const Carousel = ({ images }: CarouselProps) => {
           <div
             key={index}
             className={`transition-all duration-300 ease-in-out
-                  
-                  ${index === currentIndex
-                ? "w-6 h-2 bg-white rounded-full"   // active (oval)
-                : "w-2 h-2 bg-white/60 rounded-full"} // inactive (circle)
-                  `}
+              ${index === currentIndex
+                ? "w-6 h-2 bg-white rounded-full"
+                : "w-2 h-2 bg-white/60 rounded-full"}
+            `}
           />
         ))}
       </div>
-
-
-
     </div>
   );
 };
