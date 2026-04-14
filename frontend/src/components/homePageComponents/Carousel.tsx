@@ -61,6 +61,13 @@ const Carousel = ({ images }: CarouselProps) => {
         </div>
       </div>
 
+      {/* Gradient Overlay */}
+      <div className="pointer-events-none absolute inset-0 
+                bg-linear-to-b 
+                from-gray-900/40 via-transparent to-gray-900/40 
+                rounded-2xl" />
+
+
       {/* Left Button */}
       <button
         onClick={goLeft}
