@@ -5,8 +5,8 @@
 
 
 @theme {
-   --color-bg: #0B1D2A;     /* Main background */
-  --color-secondary-bg: #102A3A;           /* Secondary background */
+   --color-bg: #0B1D2A;        
+  --color-secondary-bg: #102A3A;           
   --color-surface: #1A3A4A;         
   
   --color-border: #2A4A5A;
@@ -19,4 +19,9 @@
 
   --color-gold: #C2A46D;
   --color-gold-hover: #A88E5C;
+}
+
+:root{
+background-color: var(--color-bg);
+color: var(--color-text-primary);
 }
