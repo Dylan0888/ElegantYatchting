@@ -1,5 +1,22 @@
-
 @import "tailwindcss";
 @plugin "daisyui" {
   themes: night;
+}
+
+
+@theme {
+   --color-bg: #0B1D2A;     /* Main background */
+  --color-secondary-bg: #102A3A;           /* Secondary background */
+  --color-surface: #1A3A4A;         
+  
+  --color-border: #2A4A5A;
+
+  --color-text-primary: #E6EEF3;
+  --color-text-secondary: #A7B8C4;
+
+  --color-teal: #2FA4A9;
+  --color-teal-hover: #258A8F;
+
+  --color-gold: #C2A46D;
+  --color-gold-hover: #A88E5C;
 }
