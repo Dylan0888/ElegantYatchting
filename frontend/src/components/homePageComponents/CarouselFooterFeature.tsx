@@ -12,7 +12,7 @@ const CarouselFooterFeature = ({ icon: Icon, heading, text }: CarouselFeature) =
             <h4 className="text-[var(--color-text-primary)] font-semibold text-lg">
                 {heading}
             </h4>
-            <p className="text-[var(--color-text-secondary)] text-sm md:text-base max-w-xs">
+            <p className="text-[var(--color-text-secondary)] max-w-[165px] text-sm md:text-base ">
                 {text}
             </p>
         </div>
