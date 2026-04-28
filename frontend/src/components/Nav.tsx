@@ -2,7 +2,7 @@ import React from 'react'
 
 const Nav = () => {
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <nav className="navbar bg-base-100 shadow-sm text-[var(--color-gold)]">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
@@ -22,7 +22,7 @@ const Nav = () => {
             </div>
 
             {/* Full Screen Layout  */}
-            <div className="navbar-center hidden md:flex">
+            <div className="navbar-center hidden md:flex text-[var(--color-text-primary)]">
                 <ul className="menu menu-horizontal px-1">
                     <li><a>Home</a></li>
                     <li><a>Tours</a></li>
@@ -34,7 +34,7 @@ const Nav = () => {
             <div className="navbar-end">
 
             </div>
-        </div>
+        </nav>
     )
 }
 
