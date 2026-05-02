@@ -1,41 +1,77 @@
-import React from 'react'
+import { useState } from "react";
+import icon from "../assets/imgs/icon.png";
+import { HiMenu, HiX } from "react-icons/hi";
 
 const Nav = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const navItems = ["Home", "Tours", "Gallery", "About", "Contact"];
+
     return (
-        <nav className="navbar bg-base-100 shadow-sm text-[var(--color-gold)]">
-            <div className="navbar-start">
-                <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
-                    </div>
-                    <ul
-                        // tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Home</a></li>
-                        <li><a>Tours</a></li>
-                        <li><a>Gallery</a></li>
-                        <li><a>About</a></li>
-                        <li><a>Contact</a></li>
-                    </ul>
-                </div>
-                <a className="btn btn-ghost text-xl ">Elegant Yachting</a>
+        <nav className="relative z-50 w-full px-6 py-3 
+                    flex items-center justify-between
+                    bg-[var(--color-bg)] border-b border-[var(--color-border)]">
+
+            {/* Logo */}
+            <div className="flex items-center gap-2">
+                <img
+                    src={icon}
+                    alt="Elegant Yachting"
+                    className="w-10 h-10 object-contain"
+                />
+                <span className="text-[var(--color-text-primary)] font-semibold text-lg sm:block">
+                    Elegant Yachting
+                </span>
             </div>
 
-            {/* Full Screen Layout  */}
-            <div className="navbar-center hidden md:flex text-[var(--color-text-primary)]">
-                <ul className="menu menu-horizontal px-1">
-                    <li><a>Home</a></li>
-                    <li><a>Tours</a></li>
-                    <li><a>Gallery</a></li>
-                    <li><a>About</a></li>
-                    <li><a>Contact</a></li>
-                </ul>
-            </div>
-            <div className="navbar-end">
+            {/* Desktop Menu */}
+            <ul className="hidden md:flex gap-8 text-[var(--color-text-primary)] font-medium">
+                {navItems.map((item, index) => (
+                    <li
+                        key={index}
+                        className="cursor-pointer relative group"
+                    >
+                        <span className="hover:text-[var(--color-gold)] transition-colors duration-300">
+                            {item}
+                        </span>
 
+                        {/* underline animation */}
+                        <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[var(--color-gold)] 
+                             transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                ))}
+            </ul>
+
+            {/* Hamburger Button (mobile only) */}
+            <button
+                className="md:hidden text-[var(--color-text-primary)] text-2xl"
+                onClick={() => setIsOpen(!isOpen)}
+            >
+                {isOpen ? <HiX /> : <HiMenu />}
+            </button>
+
+            {/* Mobile Menu */}
+            <div
+                className={`absolute top-full left-0 w-full 
+                    bg-[var(--color-secondary-bg)] 
+                    border-b border-[var(--color-border)]
+                    flex flex-col items-center gap-6 py-6
+                    transition-all duration-300
+                    ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
+            >
+                {navItems.map((item, index) => (
+                    <span
+                        key={index}
+                        className="text-[var(--color-text-primary)] text-lg cursor-pointer 
+                       hover:text-[var(--color-gold)] transition-colors"
+                        onClick={() => setIsOpen(false)}
+                    >
+                        {item}
+                    </span>
+                ))}
             </div>
         </nav>
-    )
-}
+    );
+};
 
-export default Nav
+export default Nav;
