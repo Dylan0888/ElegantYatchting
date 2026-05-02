@@ -34,7 +34,7 @@ const CarouselFooter = () => {
     return (
         <section className="bg-[var(--color-secondary-bg)] 
                     grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 
-                    gap-6 px-4 py-8">
+                    gap-6 px-4 py-8 rounded-b-lg">
 
             {features.map((feature, index) => (
                 <CarouselFooterFeature key={index} icon={feature.icon} heading={feature.heading} text={feature.text} />

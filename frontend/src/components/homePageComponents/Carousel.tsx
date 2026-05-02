@@ -44,13 +44,13 @@ const Carousel = ({ images }: CarouselProps) => {
   return (
     <div
       className="relative w-full h-100 md:h-125 lg:h-150 xl:h-170 mx-auto mt-8
-                 overflow-hidden rounded-2xl
+                 overflow-hidden rounded-t-lg
                  bg-gray-800/20 backdrop-blur-xs border border-gray-700/50"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
       {/* Sliding Track */}
-      <div className="overflow-hidden rounded-2xl">
+      <div className="overflow-hidden rounded-t-lg">
         <div
           className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -80,7 +80,8 @@ const Carousel = ({ images }: CarouselProps) => {
       <div className="pointer-events-none absolute inset-0 
                 bg-gradient-to-b 
                 from-gray-900/40 via-transparent to-gray-900/40 
-                rounded-2xl" />
+                " 
+      />
 
       {/* Left Button */}
       <button
@@ -89,7 +90,7 @@ const Carousel = ({ images }: CarouselProps) => {
                    flex items-center justify-center
                    bg-gray-700/40 text-white text-2xl
                    backdrop-blur-sm border border-black/60
-                   rounded-l-2xl
+                   rounded-l-lg
                    opacity-0 hover:opacity-100
                    transition-all duration-300
                    hover:shadow-[8px_0_20px_rgba(0,0,0,0.5)]"
@@ -104,7 +105,7 @@ const Carousel = ({ images }: CarouselProps) => {
                    flex items-center justify-center
                    bg-gray-700/40 text-white text-2xl
                    backdrop-blur-sm border border-black/60
-                   rounded-r-2xl
+                   rounded-r-lg
                    opacity-0 hover:opacity-100
                    transition-all duration-300
                    hover:shadow-[-8px_0_20px_rgba(0,0,0,0.5)]"
