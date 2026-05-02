@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import "tailwindcss";
 @plugin "daisyui" {
   themes: night;
 }
+
 
 
 @theme {
@@ -19,7 +21,13 @@
 
   --color-gold: #C2A46D;
   --color-gold-hover: #A88E5C;
+
+  --font-elegant: 'Great Vibes', cursive;
 }
+
+
+
+
 
 :root{
 background-color: var(--color-bg);

@@ -13,13 +13,13 @@ const Nav = () => {
                     bg-[var(--color-bg)] border-b border-[var(--color-border)]">
 
             {/* Logo */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 cursor-pointer">
                 <img
                     src={icon}
                     alt="Elegant Yachting"
                     className="w-10 h-10 object-contain"
                 />
-                <span className="text-[var(--color-text-primary)] font-semibold text-lg sm:block">
+                <span className="text-[var(--color-gold)] font-semibold text-xl sm:block font-elegant ">
                     Elegant Yachting
                 </span>
             </div>
