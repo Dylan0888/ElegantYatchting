@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import type { ImageStructure } from "../../types/types";
+import CarouselTextSection from "./CarouselTextSection";
 
 interface CarouselProps {
   images: ImageStructure[];
@@ -76,12 +77,50 @@ const Carousel = ({ images }: CarouselProps) => {
         </div>
       </div>
 
+
+      {/*Carousel Text */}
+      <CarouselTextSection />
+
+
+
       {/* Gradient Overlay */}
-      <div className="pointer-events-none absolute inset-0 
-                bg-gradient-to-b 
-                from-gray-900/40 via-transparent to-gray-900/40 
-                " 
+      <div
+        className="pointer-events-none absolute inset-0 rounded-t-lg"
+
+        style={{
+          background: `
+      linear-gradient(
+        to right,
+        rgba(5, 10, 20, 0.88) 0%,
+        rgba(5, 10, 20, 0.72) 22%,
+        rgba(5, 10, 20, 0.45) 40%,
+        rgba(5, 10, 20, 0.12) 60%,
+        rgba(5, 10, 20, 0) 100%
+      ),
+
+      linear-gradient(
+        to top,
+        rgba(0,0,0,0.55) 0%,
+        rgba(0,0,0,0.18) 30%,
+        rgba(0,0,0,0) 55%
+      ),
+
+      linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.30) 0%,
+        rgba(0,0,0,0) 20%
+      )
+    `,
+        }}
       />
+
+
+
+
+
+
+
+
 
       {/* Left Button */}
       <button
