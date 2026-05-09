@@ -1,4 +1,4 @@
-import type { CarouselFeature } from '../../types/types'
+import type { CarouselFeature } from '../../../types/types'
 
 
 

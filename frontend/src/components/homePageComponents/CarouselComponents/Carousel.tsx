@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import type { ImageStructure } from "../../types/types";
+import type { ImageStructure } from "../../../types/types";
 import CarouselTextSection from "./CarouselTextSection";
 
 interface CarouselProps {
