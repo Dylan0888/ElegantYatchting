@@ -5,7 +5,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const navItems = ["Home", "Tours", "Gallery", "About", "Contact"];
+    const navItems = ["Home", "Tours", "Gallery", "About"];
 
     return (
         <nav className="relative z-50 w-full px-6 py-3 
