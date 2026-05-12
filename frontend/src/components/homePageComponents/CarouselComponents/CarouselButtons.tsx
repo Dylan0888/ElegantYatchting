@@ -1,10 +1,18 @@
 import React from 'react'
 
+type directions = "left" | "right"
 
-const buttons = {
+type CarouselButtonsProps = {
+    direction: directions,
+    moveFunction: () => void
+}
+
+const CarouselButtons = ({direction, moveFunction}: CarouselButtonsProps) => {
+    
+    const buttons = {
     left:
         <button
-            onClick={goLeft}
+            onClick={moveFunction}
             className="absolute left-0 top-0 h-full w-[8%]
                    flex items-center justify-center
                    bg-gray-700/40 text-white text-2xl
@@ -12,14 +20,15 @@ const buttons = {
                    rounded-l-lg
                    opacity-0 hover:opacity-100
                    transition-all duration-300
-                   hover:shadow-[8px_0_20px_rgba(0,0,0,0.5)]"
+                   hover:shadow-[8px_0_20px_rgba(0,0,0,0.5)]
+                   "
         >
             ❮
         </button>
     ,
     right:
         <button
-            onClick={goRight}
+            onClick={moveFunction}
             className="absolute right-0 top-0 h-full w-[8%]
                    flex items-center justify-center
                    bg-gray-700/40 text-white text-2xl
@@ -32,17 +41,10 @@ const buttons = {
             ❯
         </button>
 }
-
-
-
-
-
-
-
-const CarouselButtons = () => {
+    
     return (
         <div>
-
+            {direction === "left" ? buttons.left : buttons.right}
         </div>
     )
 }

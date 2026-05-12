@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import type { ImageStructure } from "../../../types/types";
 import CarouselTextSection from "./CarouselTextSection";
 import Gradient from "./Gradient";
+import CarouselButtons from "./CarouselButtons";
 
 interface CarouselProps {
   images: ImageStructure[];
@@ -11,10 +12,10 @@ const Carousel = ({ images }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
 
+  // Navigation Functions 
   const goLeft = () => {
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
-
   const goRight = () => {
     setCurrentIndex((prev) =>
       prev === images.length - 1 ? 0 : prev + 1
@@ -36,6 +37,7 @@ const Carousel = ({ images }: CarouselProps) => {
 
     touchStartX.current = null;
   };
+
 
   //  Auto-slide
   useEffect(() => {
@@ -87,43 +89,9 @@ const Carousel = ({ images }: CarouselProps) => {
       {/* Gradient Overlay */}
       <Gradient />
 
-
-
-
-
-
-
-
-
-      {/* Left Button */}
-      <button
-        onClick={goLeft}
-        className="absolute left-0 top-0 h-full w-[8%]
-                   flex items-center justify-center
-                   bg-gray-700/40 text-white text-2xl
-                   backdrop-blur-sm border border-black/60
-                   rounded-l-lg
-                   opacity-0 hover:opacity-100
-                   transition-all duration-300
-                   hover:shadow-[8px_0_20px_rgba(0,0,0,0.5)]"
-      >
-        ❮
-      </button>
-
-      {/* Right Button */}
-      <button
-        onClick={goRight}
-        className="absolute right-0 top-0 h-full w-[8%]
-                   flex items-center justify-center
-                   bg-gray-700/40 text-white text-2xl
-                   backdrop-blur-sm border border-black/60
-                   rounded-r-lg
-                   opacity-0 hover:opacity-100
-                   transition-all duration-300
-                   hover:shadow-[-8px_0_20px_rgba(0,0,0,0.5)]"
-      >
-        ❯
-      </button>
+      {/* Navigation Buttons */}
+      <CarouselButtons direction={"left"} moveFunction={goLeft} />
+      <CarouselButtons direction={"right"} moveFunction={goRight} />
 
       {/* Indicators */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 
