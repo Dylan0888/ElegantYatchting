@@ -1,28 +1,53 @@
 import React from 'react'
+import { MdLocalPhone, MdEmail, MdLocationPin } from "react-icons/md";
+import type { IconType } from 'react-icons';
+
 
 const Footer = () => {
 
+    type footerLink = {
+        label: string,
+        icon?: IconType
+    }
+
     type FooterSection = {
         title: string;
-        links: string[];
+        links: footerLink[];
     }
 
     const footerSections: FooterSection[] = [
         {
             title: "Quick Links",
-            links: ["Home ", "Tours", "Gallery", "About"]
+            links: [
+                {label: "Home"},
+                {label: "Tours"},
+                {label: "Gallery"},
+                {label: "About"}
+            ]
         },
         {
             title: "Services",
-            links: ["Yacht Charter", "Bespoke Experiences", "Cooperate Events", "Yacht Management"]
+            links: [
+                {label:"Yacht Charter"},
+                {label: "Bespoke Experiences"},
+                {label: "Cooperate Events"},
+                {label: "Yacht Management"}
+            ]
         },
         {
             title: "Legal",
-            links: ["Terms of use", "Privacy policy", "Cookie policy"]
+            links: [
+                {label:"Terms of use"},
+                {label: "Privacy policy"},
+                {label: "Cookie policy"}
+            ]
         },
         {
             title: "Contact Us",
-            links: ["", "Privacy policy", "Cookie policy"]
+            links: [
+                {label:"+44 123 456 789", icon: MdLocalPhone},
+                {label:"info@elegantyachting.com", icon: MdEmail},
+                {label:"Monaco Harbour", icon: MdLocationPin}]
         }
     ]
 
@@ -40,7 +65,8 @@ const Footer = () => {
                             className="cursor-pointer relative group"
                         >
                             <span className="hover:text-gold transition-colors duration-150">
-                                {link}
+                                {link.icon && <link.icon className="inline mr-2" />}
+                                {link.label}
                             </span>
 
                             {/* underline animation */}
