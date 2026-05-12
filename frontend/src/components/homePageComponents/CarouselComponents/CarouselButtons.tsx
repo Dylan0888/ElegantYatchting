@@ -1,19 +1,17 @@
-import React from 'react'
+import type {directions} from "../../../types/types";
 
-type directions = "left" | "right"
+export type CarouselButtonsProps = {
+  direction: directions;
+  moveFunction: () => void;
+};
 
-type CarouselButtonsProps = {
-    direction: directions,
-    moveFunction: () => void
-}
+const CarouselButtons = ({ direction, moveFunction }: CarouselButtonsProps) => {
 
-const CarouselButtons = ({direction, moveFunction}: CarouselButtonsProps) => {
-    
     const buttons = {
-    left:
-        <button
-            onClick={moveFunction}
-            className="absolute left-0 top-0 h-full w-[8%]
+        left:
+            <button
+                onClick={moveFunction}
+                className="absolute left-0 top-0 h-full w-[8%]
                    flex items-center justify-center
                    bg-gray-700/40 text-white text-2xl
                    backdrop-blur-sm border border-black/60
@@ -22,14 +20,14 @@ const CarouselButtons = ({direction, moveFunction}: CarouselButtonsProps) => {
                    transition-all duration-300
                    hover:shadow-[8px_0_20px_rgba(0,0,0,0.5)]
                    "
-        >
-            ❮
-        </button>
-    ,
-    right:
-        <button
-            onClick={moveFunction}
-            className="absolute right-0 top-0 h-full w-[8%]
+            >
+                ❮
+            </button>
+        ,
+        right:
+            <button
+                onClick={moveFunction}
+                className="absolute right-0 top-0 h-full w-[8%]
                    flex items-center justify-center
                    bg-gray-700/40 text-white text-2xl
                    backdrop-blur-sm border border-black/60
@@ -37,11 +35,11 @@ const CarouselButtons = ({direction, moveFunction}: CarouselButtonsProps) => {
                    opacity-0 hover:opacity-100
                    transition-all duration-300
                    hover:shadow-[-8px_0_20px_rgba(0,0,0,0.5)]"
-        >
-            ❯
-        </button>
-}
-    
+            >
+                ❯
+            </button>
+    }
+
     return (
         <div>
             {direction === "left" ? buttons.left : buttons.right}
