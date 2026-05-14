@@ -5,6 +5,7 @@ import {carouselSet} from "./assets/carousellSet"
 import Footer from "./components/Footer"
 
 import YachtCard from "./components/homePageComponents/YachtFleetComponents/YachtCard"
+import YachtFleet from "./components/homePageComponents/YachtFleetComponents/YachtFleet"
 
 
 
@@ -23,7 +24,7 @@ function App() {
       </section>
 
       {/* Delete Later */}
-      <YachtCard/>
+      <YachtFleet/>
 
 
 

@@ -22,3 +22,15 @@ export type directions = "left" | "right";
 {
   /* --- --- --- --- --- */
 }
+
+
+export type Yacht ={
+  name: string;
+  status: string;
+  description: string;
+  image: string;
+  numGuests: number;
+  numCrew: number;  
+  length: number; // meters
+  alt: string;
+}

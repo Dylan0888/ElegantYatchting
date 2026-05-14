@@ -1,32 +1,25 @@
 import React from 'react'
-
-
-interface Yacht {
-  name: string;
-  status: string;
-  image: string;
-  numGuests: number;
-  numCrew: number;  
-  length: number; // meters
-}
+import YachtCard from './YachtCard'
+import { yachtList } from '../../../assets/YachtList'
 
 
 const YachtFleet = () => {
   
-  const yachts: Yacht[] = [
-    {
-      name: "Yacht 1",
-      status: "NEW",
-      image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
-      numGuests: 10,
-      numCrew: 5,
-      length: 50,
-    },
-  ]
-  
   return (
-    <div>
-      
+    <div className="flex gap-2 py-10">
+      {yachtList.map((yacht, index) => (
+        <YachtCard
+          key={index}
+          name={yacht.name}
+          status={yacht.status}
+          description={yacht.description}
+          image={yacht.image}
+          numGuests={yacht.numGuests}
+          numCrew={yacht.numCrew}
+          length={yacht.length}
+          alt={yacht.alt}
+        />
+      ))}
     </div>
   )
 }
