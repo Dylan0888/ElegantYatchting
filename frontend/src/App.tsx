@@ -4,6 +4,9 @@ import CarouselFooter from "./components/homePageComponents/CarouselComponents/C
 import {carouselSet} from "./assets/carousellSet"
 import Footer from "./components/Footer"
 
+import YachtCard from "./components/homePageComponents/YachtFleetComponents/YachtCard"
+
+
 
 
 function App() {
@@ -18,7 +21,12 @@ function App() {
         <Carousel images={carouselSet}/>
         <CarouselFooter/>
       </section>
-      <p>sasdas</p>
+
+      {/* Delete Later */}
+      <YachtCard/>
+
+
+
       <Footer/>
       
     </>
