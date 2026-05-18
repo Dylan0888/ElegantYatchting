@@ -3,10 +3,18 @@ import YachtCard from './YachtCard'
 import { yachtList } from '../../../assets/YachtList'
 
 
-const YachtFleet = () => {
+const YachtFleetCarousel = () => {
   
   return (
     <div className="flex gap-2 py-10">
+
+
+
+
+
+
+
+      
       {yachtList.map((yacht, index) => (
         <YachtCard
           key={index}
@@ -24,4 +32,4 @@ const YachtFleet = () => {
   )
 }
 
-export default YachtFleet
+export default YachtFleetCarousel
