@@ -23,7 +23,6 @@ export type directions = "left" | "right";
   /* --- --- --- --- --- */
 }
 
-
 export type Yacht ={
   name: string;
   status?: string;
@@ -34,3 +33,9 @@ export type Yacht ={
   length: number; // meters
   alt: string;
 }
+
+export type yachtCarouselLayout = [
+  [string,string,string], // slide 1
+  [string,string,string], // slide 2
+  [string,string,string], // slide 3
+]

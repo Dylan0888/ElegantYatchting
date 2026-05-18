@@ -7,14 +7,7 @@ import Footer from "./components/Footer"
 import YachtCard from "./components/homePageComponents/YachtFleetComponents/YachtCard"
 import YachtFleetCarousel from "./components/homePageComponents/YachtFleetComponents/YachtFleetCarousel"
 
-
-
-
-function App() {
-
- 
-
-  
+function App() {  
   return (
     <>
       <Nav />
