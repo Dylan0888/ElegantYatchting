@@ -81,7 +81,7 @@ const YachtFleetCarousel = () => {
 
   return (
     <section className="px-4 my-4">
-        <h3 className="text-gold font-bold uppercase">Experience</h3>
+        <h3 className="text-gold font-bold uppercase mb-2 pl-1">Our Fleet</h3>
       <div
         className="relative w-full overflow-hidden "
         onTouchStart={handleTouchStart}
