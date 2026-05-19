@@ -35,7 +35,7 @@ export type Yacht ={
 }
 
 export type yachtCarouselLayout = [
-  [string,string,string], // slide 1
-  [string,string,string], // slide 2
-  [string,string,string], // slide 3
+  [Yacht,Yacht,Yacht], // slide 2
+  [Yacht,Yacht,Yacht], // slide 1
+  [Yacht,Yacht,Yacht], // slide 3
 ]
