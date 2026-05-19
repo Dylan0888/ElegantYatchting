@@ -14,7 +14,11 @@ const FleetNavigation = ({ direction, moveFunction }: FleetNavigationProps) => {
                 onClick={moveFunction}
                 className="
                     absolute left-4 top-1/2 -translate-y-1/2
-                    btn btn-circle z-10"
+                    btn btn-circle border-white/20 text-white/50
+                    hover:border-gold
+                    active:text-gold
+                    transition-all duration-150 #
+                    z-10"
             >
                 ❮
             </button>
@@ -24,7 +28,11 @@ const FleetNavigation = ({ direction, moveFunction }: FleetNavigationProps) => {
                 onClick={moveFunction}
                 className="
                     absolute right-4 top-1/2 -translate-y-1/2
-                    btn btn-circle z-10 "
+                    btn btn-circle border-white/20 text-white/50
+                    hover:border-gold
+                    active:text-gold
+                    transition-all duration-150
+                    z-10 "
             >
                 ❯
             </button>
