@@ -86,27 +86,4 @@ export const yachtList: Yacht[] = [
     length: 48,
     alt: "Silver luxury yacht near a tropical coastline",
   },
-  // Delete later - testing carousel with duplicate yachts 
-  {
-    name: "Silver Mirage",
-    status: "NEW",
-    description:
-      "A refined performance yacht featuring minimalist interiors and state-of-the-art amenities.",
-    image: SilverMirage,
-    numGuests: 9,
-    numCrew: 5,
-    length: 48,
-    alt: "Silver luxury yacht near a tropical coastline",
-  },
-  {
-    name: "Silver Mirage",
-    status: "NEW",
-    description:
-      "A refined performance yacht featuring minimalist interiors and state-of-the-art amenities.",
-    image: SilverMirage,
-    numGuests: 9,
-    numCrew: 5,
-    length: 48,
-    alt: "Silver luxury yacht near a tropical coastline",
-  }
 ];
