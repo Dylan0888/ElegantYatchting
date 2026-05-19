@@ -1,105 +1,136 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import YachtCard from './YachtCard'
 import { yachtList } from '../../../assets/YachtList'
 import type { yachtCarouselLayout } from '../../../types/types'
 
 const YachtFleetCarousel = () => {
-  
+
+  // Groups yachts into slides of 3
   const yachtCarouselLayout: yachtCarouselLayout = [
     [yachtList[0], yachtList[1], yachtList[2]], // slide 1
     [yachtList[3], yachtList[4], yachtList[5]], // slide 2
     [yachtList[6], yachtList[7], yachtList[8]], // slide 3
   ]
 
+  const [currentIndex, setCurentIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
 
-  // map through yachtCarouselLayout to create carousel slides
-  // map through each slide to create carousel items
+  // Navigation handlers for touch events
+  const goLeft = () => {
+    setCurentIndex((prevIndex) => (prevIndex === 0 ? yachtCarouselLayout.length - 1 : prevIndex - 1));
+  }
+
+  const goRight = () => {
+    setCurentIndex((prevIndex) => (prevIndex === yachtCarouselLayout.length - 1 ? 0 : prevIndex + 1));
+  }
+
+  // Touch event handlers for swipe navigation
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+
+    const diff = e.changedTouches[0].clientX - touchStartX.current;
+
+    if (diff > 50) goLeft();
+    if (diff < -50) goRight();
+
+    touchStartX.current = null;
+  };
+
+
 
   return (
-    <div className="carousel w-full h-100 border-2 my-10">
-  <div id="slide1" className="carousel-item relative w-full ">
-      { yachtCarouselLayout.map((slide, slideIndex) => (
-         <div key={slideIndex} >
-          
-          {slide.map((yacht, yachtIndex) => (
-            <YachtCard
-          key={yachtIndex}
-          name={yacht.name}
-          status={yacht.status}
-          description={yacht.description}
-          image={yacht.image}
-          numGuests={yacht.numGuests}
-          numCrew={yacht.numCrew}
-          length={yacht.length}
-          alt={yacht.alt}
-        />
-          ))}
-           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-              <a href="#slide3" className="btn btn-circle">❮</a>
-              <a href="#slide2" className="btn btn-circle">❯</a>
+    <div
+      className="relative w-full overflow-hidden my-10"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
+      {/* Track */}
+      <div className="overflow-hidden">
+        <div
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+          }}
+        >
+          {yachtCarouselLayout.map((slide, slideIndex) => (
+            <div
+              key={slideIndex}
+              className="
+                min-w-full
+                grid
+                grid-cols-1
+                md:grid-cols-2
+                lg:grid-cols-3
+                gap-6
+                px-4
+              "
+            >
+              {slide.map((yacht, yachtIndex) => (
+                <YachtCard
+                  key={yachtIndex}
+                  name={yacht.name}
+                  status={yacht.status}
+                  description={yacht.description}
+                  image={yacht.image}
+                  numGuests={yacht.numGuests}
+                  numCrew={yacht.numCrew}
+                  length={yacht.length}
+                  alt={yacht.alt}
+                />
+              ))}
             </div>
-         </div>
-        )
-      )
+          ))}
+        </div>
+      </div>
 
-      }
-      
+      {/* Navigation Buttons */}
+      <button
+        onClick={goLeft}
+        className="
+          absolute left-4 top-1/2 -translate-y-1/2
+          btn btn-circle z-10
+        "
+      >
+        ❮
+      </button>
 
-  </div>
-  
-  
-  
-  
-  
-  
-  <div id="slide2" className="carousel-item relative w-full">
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
-      className="w-full" />
-    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide1" className="btn btn-circle">❮</a>
-      <a href="#slide3" className="btn btn-circle">❯</a>
+      <button
+        onClick={goRight}
+        className="
+          absolute right-4 top-1/2 -translate-y-1/2
+          btn btn-circle z-10
+        "
+      >
+        ❯
+      </button>
+
+      {/* Indicators */}
+      <div
+        className="
+          flex justify-center items-center gap-2
+          mt-6
+        "
+      >
+        {yachtCarouselLayout.map((_, index) => (
+          <div
+            key={index}
+            className={`
+              transition-all duration-300
+              ${currentIndex === index
+                ? "w-6 h-2 bg-white rounded-full"
+                : "w-2 h-2 bg-white/50 rounded-full"
+              }
+            `}
+          />
+        ))}
+      </div>
     </div>
-  </div>
-  <div id="slide3" className="carousel-item relative w-full">
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
-      className="w-full" />
-    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide2" className="btn btn-circle">❮</a>
-      <a href="#slide4" className="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide4" className="carousel-item relative w-full">
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
-      className="w-full" />
-    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide3" className="btn btn-circle">❮</a>
-      <a href="#slide1" className="btn btn-circle">❯</a>
-    </div>
-  </div>
-</div>
   )
 }
 
 export default YachtFleetCarousel
 
-
- {yachtList.map((yacht, index) => (
-        <YachtCard
-          key={index}
-          name={yacht.name}
-          status={yacht.status}
-          description={yacht.description}
-          image={yacht.image}
-          numGuests={yacht.numGuests}
-          numCrew={yacht.numCrew}
-          length={yacht.length}
-          alt={yacht.alt}
-        />
-      ))}
-
-
-      // <a href="#slide4" className="btn btn-circle">❮</a>
-      // <a href="#slide2" className="btn btn-circle">❯</a>
