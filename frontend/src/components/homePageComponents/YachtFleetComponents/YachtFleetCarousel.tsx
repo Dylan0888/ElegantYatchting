@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import YachtCard from "./YachtCard";
 import { yachtList } from "../../../assets/YachtList";
 import type { YachtCarouselLayout } from "../../../types/types";
+import FleetNavigation from "./FleetNavigation";
 
 const YachtFleetCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -79,93 +80,78 @@ const YachtFleetCarousel = () => {
   };
 
   return (
-    <div
-      className="relative w-full overflow-hidden my-10"
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-    >
-      {/* Track */}
-      <div className="overflow-hidden">
-        <div
-          className="flex transition-transform duration-700 ease-in-out"
-          style={{
-            transform: `translateX(-${currentIndex * 100}%)`,
-          }}
-        >
-          {yachtCarouselLayout.map((slide, slideIndex) => (
-            <div
-              key={slideIndex}
-              className="
+    <section className="px-4 my-4">
+        <h3 className="text-gold font-bold uppercase">Experience</h3>
+      <div
+        className="relative w-full overflow-hidden "
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* Track */}
+        <div className="overflow-hidden">
+          <div
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+            }}
+          >
+            {yachtCarouselLayout.map((slide, slideIndex) => (
+              <div
+                key={slideIndex}
+                className="
                 min-w-full
                 grid
                 grid-cols-1
                 md:grid-cols-2
                 lg:grid-cols-3
                 gap-6
-                px-4
+                
               "
-            >
-              {slide.map((yacht, yachtIndex) => (
-                <YachtCard
-                  key={yachtIndex}
-                  name={yacht.name}
-                  status={yacht.status}
-                  description={yacht.description}
-                  image={yacht.image}
-                  numGuests={yacht.numGuests}
-                  numCrew={yacht.numCrew}
-                  length={yacht.length}
-                  alt={yacht.alt}
-                />
-              ))}
-            </div>
-          ))}
+              >
+                {slide.map((yacht, yachtIndex) => (
+                  <YachtCard
+                    key={yachtIndex}
+                    name={yacht.name}
+                    status={yacht.status}
+                    description={yacht.description}
+                    image={yacht.image}
+                    numGuests={yacht.numGuests}
+                    numCrew={yacht.numCrew}
+                    length={yacht.length}
+                    alt={yacht.alt}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Navigation Buttons */}
-      <button
-        onClick={goLeft}
-        className="
-          absolute left-4 top-1/2 -translate-y-1/2
-          btn btn-circle z-10
-        "
-      >
-        ❮
-      </button>
+        {/* Navigation Buttons */}
+        <FleetNavigation direction={"left"} moveFunction={goLeft} />
+        <FleetNavigation direction={"right"} moveFunction={goRight} />
 
-      <button
-        onClick={goRight}
-        className="
-          absolute right-4 top-1/2 -translate-y-1/2
-          btn btn-circle z-10
-        "
-      >
-        ❯
-      </button>
-
-      {/* Indicators */}
-      <div
-        className="
+        {/* Indicators */}
+        <div
+          className="
           flex justify-center items-center gap-2
           mt-6
         "
-      >
-        {yachtCarouselLayout.map((_, index) => (
-          <div
-            key={index}
-            className={`
+        >
+          {yachtCarouselLayout.map((_, index) => (
+            <div
+              key={index}
+              className={`
               transition-all duration-300
-              ${
-                currentIndex === index
+              ${currentIndex === index
                   ? "w-6 h-2 bg-white rounded-full"
                   : "w-2 h-2 bg-white/50 rounded-full"
-              }
+                }
             `}
-          />
-        ))}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
