@@ -34,8 +34,5 @@ export type Yacht ={
   alt: string;
 }
 
-export type yachtCarouselLayout = [
-  [Yacht,Yacht,Yacht], // slide 2
-  [Yacht,Yacht,Yacht], // slide 1
-  [Yacht,Yacht,Yacht], // slide 3
-]
+export type YachtCarouselLayout = Yacht[][]
+  

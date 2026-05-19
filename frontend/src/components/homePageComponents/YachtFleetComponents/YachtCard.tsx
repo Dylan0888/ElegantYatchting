@@ -6,7 +6,7 @@ import type { Yacht } from '../../../types/types'
 
 const YachtCard = ({ name, status, description, image, numGuests, numCrew, length, alt }: Yacht) => {
     return (
-        <div className="card bg-base-100 w-96 shadow-sm border border-text-secondary rounded-md cursor-pointer hover:shadow-lg transition-shadow duration-300">
+        <div className="card bg-base-100 shadow-sm border border-text-secondary rounded-md cursor-pointer hover:shadow-lg transition-shadow duration-300">
             <figure>
                 <img
                     src={image}

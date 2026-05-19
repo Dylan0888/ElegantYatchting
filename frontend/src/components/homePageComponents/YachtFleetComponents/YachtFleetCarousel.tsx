@@ -1,33 +1,71 @@
-import React, { useState, useRef } from 'react'
-import YachtCard from './YachtCard'
-import { yachtList } from '../../../assets/YachtList'
-import type { yachtCarouselLayout } from '../../../types/types'
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import YachtCard from "./YachtCard";
+import { yachtList } from "../../../assets/YachtList";
+import type { YachtCarouselLayout } from "../../../types/types";
 
 const YachtFleetCarousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardsPerSlide, setCardsPerSlide] = useState(3);
 
-  // Groups yachts into slides of 3
-  const yachtCarouselLayout: yachtCarouselLayout = [
-    [yachtList[0], yachtList[1], yachtList[2]], // slide 1
-    [yachtList[3], yachtList[4], yachtList[5]], // slide 2
-    [yachtList[6], yachtList[7], yachtList[8]], // slide 3
-  ]
-
-  const [currentIndex, setCurentIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
 
-  // Navigation handlers for touch events
+  // Responsive cards per slide
+  useEffect(() => {
+    const updateCardsPerSlide = () => {
+      if (window.innerWidth >= 1024) {
+        setCardsPerSlide(3); // desktop
+      } else if (window.innerWidth >= 768) {
+        setCardsPerSlide(2); // tablet
+      } else {
+        setCardsPerSlide(1); // mobile
+      }
+    };
+
+    updateCardsPerSlide();
+
+    window.addEventListener("resize", updateCardsPerSlide);
+
+    return () => {
+      window.removeEventListener("resize", updateCardsPerSlide);
+    };
+  }, []);
+
+  // Dynamically create slides
+  const yachtCarouselLayout: YachtCarouselLayout = useMemo(() => {
+    const slides = [];
+
+    for (let i = 0; i < yachtList.length; i += cardsPerSlide) {
+      slides.push(yachtList.slice(i, i + cardsPerSlide));
+    }
+
+    return slides;
+  }, [cardsPerSlide]);
+
+  // Reset index if layout changes
+  useEffect(() => {
+    if (currentIndex >= yachtCarouselLayout.length) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setCurrentIndex(0);
+    }
+  }, [cardsPerSlide, currentIndex, yachtCarouselLayout.length]);
+
+  // Navigation handlers
   const goLeft = () => {
-    setCurentIndex((prevIndex) => (prevIndex === 0 ? yachtCarouselLayout.length - 1 : prevIndex - 1));
-  }
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? yachtCarouselLayout.length - 1 : prevIndex - 1,
+    );
+  };
 
   const goRight = () => {
-    setCurentIndex((prevIndex) => (prevIndex === yachtCarouselLayout.length - 1 ? 0 : prevIndex + 1));
-  }
+    setCurrentIndex((prevIndex) =>
+      prevIndex === yachtCarouselLayout.length - 1 ? 0 : prevIndex + 1,
+    );
+  };
 
-  // Touch event handlers for swipe navigation
+  // Touch event handlers
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
-  }
+  };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX.current === null) return;
@@ -39,8 +77,6 @@ const YachtFleetCarousel = () => {
 
     touchStartX.current = null;
   };
-
-
 
   return (
     <div
@@ -120,17 +156,17 @@ const YachtFleetCarousel = () => {
             key={index}
             className={`
               transition-all duration-300
-              ${currentIndex === index
-                ? "w-6 h-2 bg-white rounded-full"
-                : "w-2 h-2 bg-white/50 rounded-full"
+              ${
+                currentIndex === index
+                  ? "w-6 h-2 bg-white rounded-full"
+                  : "w-2 h-2 bg-white/50 rounded-full"
               }
             `}
           />
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default YachtFleetCarousel
-
+export default YachtFleetCarousel;
