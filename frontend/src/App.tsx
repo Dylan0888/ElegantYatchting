@@ -4,22 +4,27 @@ import CarouselFooter from "./components/homePageComponents/CarouselComponents/C
 import {carouselSet} from "./assets/carousellSet"
 import Footer from "./components/Footer"
 
-import YachtCard from "./components/homePageComponents/YachtFleetComponents/YachtCard"
+
 import YachtFleetCarousel from "./components/homePageComponents/YachtFleetComponents/YachtFleetCarousel"
+
+import Award from "./components/homePageComponents/Award"
+
 
 function App() {  
   return (
     <>
       <Nav />
+      
       <section>
         <Carousel images={carouselSet}/>
         <CarouselFooter/>
       </section>
 
-      {/* Delete Later */}
+      
       <YachtFleetCarousel/>
 
 
+     <Award/>
 
       <Footer/>
       
