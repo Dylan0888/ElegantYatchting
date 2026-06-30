@@ -18,6 +18,19 @@ export interface CarouselFeature {
 export type directions = "left" | "right";
 
 
+{
+  /* --- Award Types --- */
+}
+
+export type Award = {
+  img: string;
+  alt: string | null;
+  title: string;
+  description: string | null;
+  provider: string;
+};
+
+export type Awards = Award[];
 
 {
   /* --- --- --- --- --- */
