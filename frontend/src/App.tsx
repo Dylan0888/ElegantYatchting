@@ -7,7 +7,7 @@ import Footer from "./components/Footer"
 
 import YachtFleetCarousel from "./components/homePageComponents/YachtFleetComponents/YachtFleetCarousel"
 
-import Award from "./components/homePageComponents/Award"
+import AwardsContainer from "./components/homePageComponents/AwardsContainer"
 
 
 function App() {  
@@ -24,7 +24,7 @@ function App() {
       <YachtFleetCarousel/>
 
 
-     <Award/>
+     <AwardsContainer/>
 
       <Footer/>
       
