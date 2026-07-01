@@ -22,7 +22,7 @@ export type directions = "left" | "right";
   /* --- Award Types --- */
 }
 
-export type Award = {
+export type AwardStructure = {
   img: string;
   alt: string | null;
   title: string;
@@ -30,7 +30,7 @@ export type Award = {
   provider: string;
 };
 
-export type Awards = Award[];
+export type Awards = AwardStructure[];
 
 {
   /* --- --- --- --- --- */
