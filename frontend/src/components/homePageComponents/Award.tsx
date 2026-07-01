@@ -2,7 +2,7 @@ import type { AwardStructure } from '../../types/types'
 
 const Award = (award: AwardStructure) => {
     return (
-        <figure className="card bg-base-100 w-96 shadow-sm">
+        <figure>
             <img src={award.img} />
         </figure>
     )
