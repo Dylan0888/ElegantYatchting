@@ -21,13 +21,15 @@ function App() {
         <CarouselFooter/>
       </section>
 
-      <AttentionGrid/>
+      
 
       
       <YachtFleetCarousel/>
 
 
      <AwardsContainer/>
+
+    <AttentionGrid/>
 
       <Footer/>
       
