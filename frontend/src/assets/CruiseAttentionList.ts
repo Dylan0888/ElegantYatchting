@@ -13,7 +13,7 @@ export const cruiseAttentionGrabbers: CruiseAttentionGrabber[] = [
         buttonText: "View Family Cruises"
     },
     {
-        title: "Sophisticated Adult Only Cruises",  
+        title: "Luxury Adult Only Cruises",  
         description: "Indulge in a sophisticated and relaxing experience with our adult-only cruises. Enjoy fine dining, entertainment, and activities designed for adults seeking a serene getaway.",
         image: adultOnly,
         icon: TbRating18Plus,
