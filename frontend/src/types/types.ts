@@ -49,3 +49,14 @@ export type Yacht ={
 
 export type YachtCarouselLayout = Yacht[][]
   
+
+{
+  /* --- Attention Grabber Home Page Types --- */
+}
+
+export type CruiseAttentionGrabber = {
+    title: string,
+    description: string
+    image: string
+    icon: IconType
+}

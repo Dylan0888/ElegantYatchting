@@ -8,6 +8,7 @@ import Footer from "./components/Footer"
 import YachtFleetCarousel from "./components/homePageComponents/YachtFleetComponents/YachtFleetCarousel"
 
 import AwardsContainer from "./components/homePageComponents/AwardsContainer"
+import AttentionGrid from "./components/homePageComponents/AttentionGraberComponents/AttentionGrid"
 
 
 function App() {  
@@ -19,6 +20,8 @@ function App() {
         <Carousel images={carouselSet}/>
         <CarouselFooter/>
       </section>
+
+      <AttentionGrid/>
 
       
       <YachtFleetCarousel/>
