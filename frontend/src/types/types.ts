@@ -61,3 +61,12 @@ export type CruiseAttentionGrabber = {
     icon: IconType
     buttonText: string
 }
+
+
+
+export type promoBanner = {
+    title: string,
+    description: string,
+    buttonText: string
+    img: string
+}
