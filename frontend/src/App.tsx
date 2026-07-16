@@ -10,6 +10,8 @@ import YachtFleetCarousel from "./components/homePageComponents/YachtFleetCompon
 import AwardsContainer from "./components/homePageComponents/AwardsContainer"
 import AttentionGrid from "./components/homePageComponents/AttentionGraberComponents/AttentionGrid"
 
+import PromoBanner from "./components/homePageComponents/PromoBanner"
+
 
 function App() {  
   return (
@@ -27,9 +29,11 @@ function App() {
       <YachtFleetCarousel/>
 
 
-     <AwardsContainer/>
+      <AwardsContainer/>
 
-    <AttentionGrid/>
+      <AttentionGrid/>
+
+      <PromoBanner/>
 
       <Footer/>
       
@@ -37,3 +41,6 @@ function App() {
   )
 }
 export default App
+
+
+

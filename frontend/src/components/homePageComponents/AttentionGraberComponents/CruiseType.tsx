@@ -43,21 +43,7 @@ const CruiseType = (cruise: CruiseAttentionGrabber) => {
         <div className="card-actions justify-start">
           <button
             className="
-              btn btn-primary
-              bg-gold
-              border-2 border-transparent
-              px-4 py-2
-              gap-2
-              rounded-md
-              font-semibold
-              cursor-pointer
-
-              hover:bg-gold-hover
-              active:bg-gold-hover/90
-              active:border-text-primary
-              active:scale-[1.02]
-
-              transition-all duration-200
+              btn-primary-custom
             "
           >
             {cruise.icon && <cruise.icon className="text-xl"/>}

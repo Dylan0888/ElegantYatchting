@@ -25,7 +25,10 @@
   --font-elegant: 'Great Vibes', cursive;
 
   --animate-infinite-scroll: infinite-scroll 20s linear infinite;
+
 }
+
+
 
 @keyframes infinite-scroll {
   0% {
@@ -35,6 +38,28 @@
     transform: translateX(-25%);
   }
 }
+
+@utility btn-primary-custom {
+  @apply bg-gold
+    border-2 border-transparent
+    flex 
+    tracking-wide
+    px-4 py-2
+    rounded-md
+    font-semibold
+    cursor-pointer
+    transition-all
+    duration-200
+    hover:bg-gold-hover
+    active:bg-gold-hover/90
+    active:border-text-primary
+    active:scale-[1.02];
+}
+
+
+
+
+
 
 
 :root{
