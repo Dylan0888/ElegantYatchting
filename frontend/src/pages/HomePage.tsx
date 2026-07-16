@@ -1,0 +1,29 @@
+import Carousel from '../components/homePageComponents/CarouselComponents/Carousel'
+import CarouselFooter from '../components/homePageComponents/CarouselComponents/CarouselFooter'
+import {carouselSet} from '../assets/carousellSet'
+import YachtFleetCarousel from '../components/homePageComponents/YachtFleetComponents/YachtFleetCarousel'
+import AwardsContainer from '../components/homePageComponents/AwardsContainer'
+import AttentionGrid from '../components/homePageComponents/AttentionGraberComponents/AttentionGrid'
+import PromoBanner from '../components/homePageComponents/PromoBanner'
+
+
+const HomePage = () => {
+  return (
+    <>
+      <section>
+        <Carousel images={carouselSet}/>
+        <CarouselFooter/>
+      </section>
+
+      <YachtFleetCarousel/>
+      
+      <AwardsContainer/>
+
+      <AttentionGrid/>
+
+      <PromoBanner/>
+    </>
+  )
+}
+
+export default HomePage
