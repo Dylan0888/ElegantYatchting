@@ -1,5 +1,5 @@
 import type { promoBanner } from "../types/types";
-import promoImg from '../assets/imgs/promo-banner.jpg'
+import promoImg from '../assets/imgs/promoBanner.jpg'
 
 
 export const promoDetails: promoBanner = {
