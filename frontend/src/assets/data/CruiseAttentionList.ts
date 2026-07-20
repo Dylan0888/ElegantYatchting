@@ -1,8 +1,8 @@
-import type {CruiseAttentionGrabber} from '../types/types'
+import type {CruiseAttentionGrabber} from '../../types/types'
 import { MdOutlineFamilyRestroom } from "react-icons/md";
 import { TbRating18Plus } from "react-icons/tb";
-import adultOnly from '../assets/imgs/AttentionGrabberImages/adults-cruise.webp'
-import luxuryFamily from '../assets/imgs/AttentionGrabberImages/family-cruise.jpg'
+import adultOnly from '../imgs/AttentionGrabberImages/adults-cruise.webp'
+import luxuryFamily from '../imgs/AttentionGrabberImages/family-cruise.jpg'
 
 export const cruiseAttentionGrabbers: CruiseAttentionGrabber[] = [
     {

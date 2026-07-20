@@ -1,5 +1,5 @@
 import CruiseType from "./CruiseType"
-import { cruiseAttentionGrabbers }  from "../../../assets/CruiseAttentionList"
+import { cruiseAttentionGrabbers }  from "../../../assets/data/CruiseAttentionList"
 
 const AttentionGrid = () => {
     return (

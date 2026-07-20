@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import YachtCard from "./YachtCard";
-import { yachtList } from "../../../assets/YachtList";
+import { yachtList } from "../../../assets/data/YachtList";
 import type { YachtCarouselLayout } from "../../../types/types";
 import FleetNavigation from "./FleetNavigation";
 

@@ -1,10 +1,10 @@
-import type {Awards} from "../types/types";
-import badge1 from "./imgs/awardImages/badge1.png";
-import badge2 from "./imgs/awardImages/badge2.png";
-import badge3 from "./imgs/awardImages/badge3.png";
-import badge4 from "./imgs/awardImages/badge4.png";
-import badge5 from "./imgs/awardImages/badge5.png";
-import badge6 from "./imgs/awardImages/badge6.png";
+import type {Awards} from "../../types/types";
+import badge1 from "../imgs/awardImages/badge1.png";
+import badge2 from "../imgs/awardImages/badge2.png";
+import badge3 from "../imgs/awardImages/badge3.png";
+import badge4 from "../imgs/awardImages/badge4.png";
+import badge5 from "../imgs/awardImages/badge5.png";
+import badge6 from "../imgs/awardImages/badge6.png";
 
 
 export const awardList: Awards = [

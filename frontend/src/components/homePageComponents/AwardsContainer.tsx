@@ -1,5 +1,5 @@
 import Award from './Award'
-import { awardList } from '../../assets/AwardsList'
+import { awardList } from '../../assets/data/AwardsList'
 
 const AwardsContainer = () => {
 

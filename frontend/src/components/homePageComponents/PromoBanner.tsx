@@ -1,4 +1,4 @@
-import { promoDetails } from '../../assets/promoBannerInfo'
+import { promoDetails } from '../../assets/data/promoBannerInfo'
 
 const PromoBanner = () => {
     return (

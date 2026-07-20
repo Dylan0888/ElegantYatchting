@@ -1,11 +1,11 @@
-import type { Yacht } from "../types/types";
-import ThatSinkingFeeling from "./imgs/YachtImages/ThatSinkingFeeling.jpg";
-import OceanEmbrace from "./imgs/YachtImages/OceansEmbrace.jpg";
-import AzureHorizon from "./imgs/YachtImages/AzureHorizon.jpg";
-import CelestialWave from "./imgs/YachtImages/CelestialWave.jpg";
-import GoldenOdyssey from "./imgs/YachtImages/GoldenOdyssey.jpg";
-import VelvetTide from "./imgs/YachtImages/VelvetTide.jpg";
-import SilverMirage from "./imgs/YachtImages/SilverMirage.jpg";
+import type { Yacht } from "../../types/types";
+import ThatSinkingFeeling from "../imgs/YachtImages/ThatSinkingFeeling.jpg";
+import OceanEmbrace from "../imgs/YachtImages/OceansEmbrace.jpg";
+import AzureHorizon from "../imgs/YachtImages/AzureHorizon.jpg";
+import CelestialWave from "../imgs/YachtImages/CelestialWave.jpg";
+import GoldenOdyssey from "../imgs/YachtImages/GoldenOdyssey.jpg";
+import VelvetTide from "../imgs/YachtImages/VelvetTide.jpg";
+import SilverMirage from "../imgs/YachtImages/SilverMirage.jpg";
 
 export const yachtList: Yacht[] = [
   {
