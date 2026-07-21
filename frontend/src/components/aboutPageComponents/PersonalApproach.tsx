@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LuxuryCTA = () => {
+const PersonalApproach = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const LuxuryCTA = () => {
   )
 }
 
-export default LuxuryCTA
+export default PersonalApproach
