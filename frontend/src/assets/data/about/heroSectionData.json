@@ -1,7 +1,9 @@
 {
     "page": "about us",
-    "primHead": "redefining",
-    "secHead": "luxury at sea",
+    "headings": {
+      "head": "redefining",
+      "sub": "luxury at sea"
+    },
     "desc": 
       "At Elegant Yachting, we curate exceptional experiences for those who appreciate the fine things in life. More than a yacht charter company, we create unforgettable moments on the water",
     "img": "/src/assets/imgs/interiors/interior1.jpg"

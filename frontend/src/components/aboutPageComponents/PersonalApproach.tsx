@@ -15,11 +15,11 @@ const PersonalApproach = () => {
 
         <div className="flex flex-col justify-center transition-all duration-150">
           <span className="uppercase tracking-[0.4em] text-gold">
-            {pa.subHeading}
+            {pa.headings.sub}
           </span>
 
           <h2 className="sm:mt-3 mt-5 text-5xl font-light leading-normal text-slate-900">
-            {pa.heading}
+            {pa.headings.head}
           </h2>
 
           <div className="sm:mt-4 mt-8 h-0.5 w-20 bg-gold" />

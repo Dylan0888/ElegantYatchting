@@ -24,10 +24,10 @@ const HeroSection = () => {
                     </span>
 
                     <h1 className="mt-6 text-6xl font-light text-text-primary leading-tight md:text-7xl">
-                        {hd.primHead}
+                        {hd.headings.head}
                         <br />
                         <span className="text-gold">
-                            {hd.secHead}
+                            {hd.headings.head}
                         </span>
                     </h1>
 

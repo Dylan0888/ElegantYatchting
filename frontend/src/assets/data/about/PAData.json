@@ -3,8 +3,10 @@
         "src": "/src/assets/imgs/interiors/interior2.jpg",
         "alt": "Elegant image of a Yacht Interior"
     },
-    "heading": "a personal approach to luxury",
-    "subHeading": "our philosophy",
+    "headings": {
+        "head": "a personal approach to luxury",
+        "sub": "our philosophy"
+    },
     "para1": 
     " Luxury is never one-size-fits-all. Every itinerary is carefully designed around your preferences, creating experiences that feel effortless from beginning to end.",
     "para2":

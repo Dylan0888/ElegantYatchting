@@ -6,8 +6,7 @@ type Headings = {
 }
 export interface heroData {
         page: string
-        primHead: string
-        secHead: string
+        headings: Headings
         desc: string
         img: string
     }
@@ -17,8 +16,7 @@ export interface personalApproachProps {
         src: string
         alt: string
     },
-    heading: string
-    subHeading: string
+    headings: Headings
     para1: string
     para2: string
 } 
