@@ -1,0 +1,27 @@
+[
+    {
+        "icon": "IoBoatOutline",
+        "title": "Bespoke Experiences",
+        "text": "Private charters tailored around you."
+    },
+    {
+        "icon": "FaRegGem",
+        "title": "Luxury Fleet",
+        "text": "Exceptional yachts maintained impeccably."
+    },
+    {
+        "icon": "SiWorldhealthorganization",
+        "title": "Professional Crew",
+        "text": "World-class hospitality throughout."
+    },
+    {
+        "icon": "FaHandHoldingMedical",
+        "title": "Seamless Planning",
+        "text": "Every detail expertly arranged."
+    },
+    {
+        "icon": "MdOutlineHealthAndSafety",
+        "title": "Privacy & Safety",
+        "text": "Your comfort is our highest priority."
+    }
+]

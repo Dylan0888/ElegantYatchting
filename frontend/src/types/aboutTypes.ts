@@ -1,5 +1,3 @@
-import type { IconType } from "react-icons"
-
 type Headings = {
     head: string,
     sub: string
@@ -22,7 +20,7 @@ export interface personalApproachProps {
 } 
 
 export interface aboutFeatures {
-    icon: IconType
+    icon: string
     title: string
     text: string
 }

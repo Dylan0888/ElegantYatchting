@@ -1,8 +1,15 @@
 import React from 'react'
 import type { aboutFeatures } from '../../types/aboutTypes'
+import type { IconType } from 'react-icons';
 
-const ESFeature = (feature: aboutFeatures) => {
-    const Icon = feature.icon
+interface ESProps {
+    feature: aboutFeatures,
+    icons: Record<string, IconType>
+}
+
+const ESFeature = ({feature,icons}:ESProps) => {
+    
+    const Icon = icons[feature.icon]
     return (
         <div
             key={feature.title}
