@@ -1,3 +1,5 @@
+import type { IconType } from "react-icons"
+
 export interface heroData {
         page: string
         primHead: string
@@ -16,3 +18,9 @@ export interface personalApproachProps {
     para1: string
     para2: string
 } 
+
+export interface aboutFeatures {
+    icon: IconType
+    title: string
+    text: string
+}
