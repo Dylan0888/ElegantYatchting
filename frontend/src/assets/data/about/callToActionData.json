@@ -1,0 +1,13 @@
+{
+    "img":{
+        "src": "/src/assets/imgs/YachtImages/old-school-yacht.jpg",
+        "alt": "Image of a pirate ship"
+    },
+    "headings":{
+        "head": "More Than A Destination",
+        "sub": "Every Charter Is an Invitation to Experience the Sea Differently."
+    },
+    "para": 
+    "From peaceful anchorages to unforgettable celebrations, we create journeys that combine exceptional service, refined luxury and timeless memories.",
+    "buttonText": "Enquire Now"
+}

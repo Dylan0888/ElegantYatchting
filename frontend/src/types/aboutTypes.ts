@@ -1,5 +1,9 @@
 import type { IconType } from "react-icons"
 
+type Headings = {
+    head: string,
+    sub: string
+}
 export interface heroData {
         page: string
         primHead: string
@@ -24,3 +28,14 @@ export interface aboutFeatures {
     title: string
     text: string
 }
+
+export interface ctaProps {
+    img: {
+        src: string
+        alt: string
+    },
+    headings: Headings
+    para: string
+    buttonText: string
+}
+
