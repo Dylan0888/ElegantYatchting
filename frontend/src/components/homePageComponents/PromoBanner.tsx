@@ -1,6 +1,9 @@
-import { promoDetails } from '../../assets/data/promoBannerInfo'
+import promoDetails from '../../assets/data/home/promoBannerInfo.json'
+import type { promoBanner } from '../../types/types'
 
 const PromoBanner = () => {
+    const promo: promoBanner = promoDetails
+
     return (
         <div
             className="relative flex items-center overflow-hidden
@@ -9,7 +12,7 @@ const PromoBanner = () => {
                     mx-3 my-3" 
                     
             style={{
-                backgroundImage: `url(${promoDetails.img})`,
+                backgroundImage: `url(${promo.img})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}
@@ -21,15 +24,15 @@ const PromoBanner = () => {
             <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-10">
                 <div className="max-w-lg">
                     <h1 className="mb-4 text-3xl text-gold font-bold  md:text-5xl">
-                        {promoDetails.title}
+                        {promo.title}
                     </h1>
 
                     <p className="mb-6 text-base text-text-secondary md:text-lg">
-                        {promoDetails.description}
+                        {promo.description}
                     </p>
 
                     <button className="btn-primary-custom">
-                        {promoDetails.buttonText}
+                        {promo.buttonText}
                     </button>
                 </div>
             </div>

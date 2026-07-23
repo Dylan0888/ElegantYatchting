@@ -6,9 +6,9 @@ import CarouselButtons from "./CarouselButtons";
 import carouselImages from '../../../assets/data/home/carouselSet.json'
 
 const Carousel = () => {
-
+  // Loads the json file
   const images: ImageStructure[] = carouselImages 
-
+  
   const [currentIndex, setCurrentIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
 
