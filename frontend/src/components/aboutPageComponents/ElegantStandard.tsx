@@ -5,11 +5,11 @@ import { FaRegGem } from "react-icons/fa";
 import { SiWorldhealthorganization } from "react-icons/si";
 import { FaHandHoldingMedical } from "react-icons/fa";
 import { MdOutlineHealthAndSafety }  from "react-icons/md";
-import type { IconType } from "react-icons";
+import type { StringToIcon } from "../../types/types";
 
 const ElegantStandard = () => {
 
-  const icons: Record<string, IconType> = {
+  const icons: StringToIcon = {
     IoBoatOutline,
     FaRegGem,
     SiWorldhealthorganization,

@@ -1,5 +1,7 @@
 import type { IconType } from "react-icons";
 
+export type StringToIcon = Record<string, IconType>;
+
 {
   /* --- Carousel Types --- */
 }
