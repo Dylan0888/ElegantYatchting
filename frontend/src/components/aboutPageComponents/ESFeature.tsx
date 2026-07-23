@@ -1,10 +1,10 @@
 import React from 'react'
 import type { aboutFeatures } from '../../types/aboutTypes'
-import type { IconType } from 'react-icons';
+import type { StringToIcon } from '../../types/types';
 
 interface ESProps {
     feature: aboutFeatures,
-    icons: Record<string, IconType>
+    icons: StringToIcon
 }
 
 const ESFeature = ({feature,icons}:ESProps) => {

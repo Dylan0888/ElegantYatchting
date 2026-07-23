@@ -1,6 +1,14 @@
 import type { CruiseAttentionGrabber } from "../../../types/types";
+import type { StringToIcon } from "../../../types/types"
 
-const CruiseType = (cruise: CruiseAttentionGrabber) => {
+interface props {
+  cruise: CruiseAttentionGrabber,
+  icons: StringToIcon
+}
+
+const CruiseType = ({cruise,icons}: props) => {
+  const Icon = icons[cruise.icon]
+
   return (
     <div
       className="
@@ -46,7 +54,7 @@ const CruiseType = (cruise: CruiseAttentionGrabber) => {
               btn-primary-custom
             "
           >
-            {cruise.icon && <cruise.icon className="text-xl"/>}
+            <Icon className="text-xl"/>
             {cruise.buttonText}
           </button>
         </div>

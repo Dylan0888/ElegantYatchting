@@ -2,14 +2,14 @@
     {
         "title": "Luxury Family Cruises",  
         "description": "Experience the ultimate in luxury and comfort with our family-friendly cruises. Enjoy spacious accommodations, gourmet dining, and a variety of activities for all ages.",
-        "image": "./AttentionGrabberImages/family-cruise.jpg",
+        "image": "/src/assets/imgs/AttentionGrabberImages/family-cruise.jpg",
         "icon": "MdOutlineFamilyRestroom",
         "buttonText": "View Family Cruises"
     },
     {
         "title": "Luxury Adult Only Cruises",  
         "description": "Indulge in a sophisticated and relaxing experience with our adult-only cruises. Enjoy fine dining, entertainment, and activities designed for adults seeking a serene getaway.",
-        "image": "./AttentionGrabberImages/adults-cruise.webp",
+        "image": "/src/assets/imgs/AttentionGrabberImages/adults-cruise.webp",
         "icon": "TbRating18Plus",
         "buttonText": "View Adult Cruises"
     }

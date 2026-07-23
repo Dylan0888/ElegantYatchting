@@ -60,7 +60,7 @@ export type CruiseAttentionGrabber = {
     title: string,
     description: string
     image: string
-    icon: IconType
+    icon: string
     buttonText: string
 }
 
