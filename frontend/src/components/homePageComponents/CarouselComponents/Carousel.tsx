@@ -3,12 +3,12 @@ import type { ImageStructure } from "../../../types/types";
 import CarouselTextSection from "./CarouselTextSection";
 import Gradient from "./Gradient";
 import CarouselButtons from "./CarouselButtons";
+import carouselImages from '../../../assets/data/home/carouselSet.json'
 
-interface CarouselProps {
-  images: ImageStructure[];
-}
+const Carousel = () => {
 
-const Carousel = ({ images }: CarouselProps) => {
+  const images: ImageStructure[] = carouselImages 
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
 
@@ -47,7 +47,7 @@ const Carousel = ({ images }: CarouselProps) => {
 
   return (
     <div
-      className="relative w-full h-100 md:h-125 lg:h-150 xl:h-170 mx-auto mt-8
+      className="relative w-full h-100 md:h-125 lg:h-150 xl:h-170 mx-auto mt-4
                  overflow-hidden rounded-t-lg
                  bg-gray-800/20 backdrop-blur-xs border border-gray-700/50"
       onTouchStart={handleTouchStart}

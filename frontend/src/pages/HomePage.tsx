@@ -2,7 +2,6 @@ import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import Carousel from '../components/homePageComponents/CarouselComponents/Carousel'
 import CarouselFooter from '../components/homePageComponents/CarouselComponents/CarouselFooter'
-import {carouselSet} from '../assets/data/carousellSet'
 import YachtFleetCarousel from '../components/homePageComponents/YachtFleetComponents/YachtFleetCarousel'
 import AwardsContainer from '../components/homePageComponents/awardsComponents/AwardsContainer'
 import AttentionGrid from '../components/homePageComponents/AttentionGraberComponents/AttentionGrid'
@@ -14,7 +13,7 @@ const HomePage = () => {
     <>
     <Nav/>
       <section>
-        <Carousel images={carouselSet}/>
+        <Carousel/>
         <CarouselFooter/>
       </section>
 
