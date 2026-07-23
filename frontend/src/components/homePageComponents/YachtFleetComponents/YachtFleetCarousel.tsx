@@ -1,10 +1,14 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import YachtCard from "./YachtCard";
-import { yachtList } from "../../../assets/data/YachtList";
+import yachts from "../../../assets/data/home/yachtList.json";
+import type { Yacht } from "../../../types/types";
 import type { YachtCarouselLayout } from "../../../types/types";
 import FleetNavigation from "./FleetNavigation";
 
 const YachtFleetCarousel = () => {
+
+  const yachtList: Yacht[] = yachts
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsPerSlide, setCardsPerSlide] = useState(3);
 
