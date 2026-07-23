@@ -1,5 +1,5 @@
 import Award from './Award'
-import { awardList } from '../../assets/data/AwardsList'
+import awardsList from '../../../assets/data/home/awardsList.json'
 
 const AwardsContainer = () => {
 
@@ -59,7 +59,7 @@ const AwardsContainer = () => {
             {/* Marquee */}
             <div className="overflow-hidden w-screen">
                 <ul className="flex w-max gap-8 animate-infinite-scroll ">
-                    {[...awardList, ...awardList, ...awardList].map(
+                    {[...awardsList, ...awardsList, ...awardsList].map(
                         (award, index) => (
                             <li
                                 key={index}

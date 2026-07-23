@@ -1,4 +1,4 @@
-import type { AwardStructure } from '../../types/types'
+import type { AwardStructure } from '../../../types/types'
 
 const Award = (award: AwardStructure) => {
     return (
