@@ -1,0 +1,116 @@
+[
+    {
+        "img": {
+            "src": "/src/assets/imgs/GalleryCollection/benidorm-sailing.jpg",
+            "alt": "Yacht Sailing in front of Beach"
+        },
+        "title": "Party Boat 14",
+        "location": "Benidorm, Spain",
+        "date": "12/05/2014",
+        "tags": ["summer", "beach", "dusk"]
+    },
+    {
+        "img": {
+            "src": "/src/assets/imgs/GalleryCollection/docked-glow.jpg",
+            "alt": "Yacht Parked next at Night"
+        },
+        "title": "Hawaiian Dock",
+        "location": "Hawaii, America",
+        "date": "01/08/2025",
+        "tags": ["night", "docked", "glow", "tropical"]
+    },
+    {
+        "img": {
+            "src": "/src/assets/imgs/GalleryCollection/dusk-yacht.jpg",
+            "alt": "Yacht Docked next to rocky Pier"
+        },
+        "title": "Rocky Pier",
+        "location": "Ibiza, Spain",
+        "date": "29/06/2024",
+        "tags": ["dusk", "elegant", "docked", "glow"]
+    },
+    {
+        "img": {
+            "src": "/src/assets/imgs/GalleryCollection/frozen-oasis.jpg",
+            "alt": "Boat Isolated in Frozen Cove"
+        },
+        "title": "Frozen Oasis",
+        "location": "Reynisfjara, Iceland",
+        "date": "02/02/2022",
+        "tags": ["frozen", "winter", "beach"]
+    },
+    {
+        "img": {
+            "src": "/src/assets/imgs/GalleryCollection/monkey-dream.jpg",
+            "alt": "Yacht Docked next to tropical hut"
+        },
+        "title": "Monkey Island",
+        "location": "Koh Kradan, Thailand",
+        "date": "18/01/ 2021",
+        "tags": ["beach", "tropical", "docked"]
+    },
+    {
+        "img": {
+            "src": "/src/assets/imgs/GalleryCollection/neon-dream.jpg",
+            "alt": "Yacht Sailing at Dusk"
+        },
+        "title": "Elegant Dream",
+        "location": "Koh Samui, Thailand",
+        "date": "11/02/2023",
+        "tags": ["dusk","glow", "elegant", "tropical", "sailing"]
+    },
+    {
+        "img": {
+            "src": "/src/assets/imgs/GalleryCollection/old-school-yacht.jpg",
+            "alt": "Old School Boat Sailing"
+        },
+        "title": "Ye Old Ship",
+        "location": "Water, Ocean",
+        "date": "08/10/2015",
+        "tags": ["sailing", "elegant", "Vintage"]
+    },
+    {
+        "img": {
+            "src": "/src/assets/imgs/GalleryCollection/sunset.jpg",
+            "alt": "Sailing with Islands on the Horizon"
+        },
+        "title": "Land Hoyyyy",
+        "location": "Water, Ocean",
+        "date": "13/03/2020",
+        "tags": ["sailing","elegant","tropical","glow"]
+    },
+    
+    {
+        "img": {
+            "src": "/src/assets/imgs/GalleryCollection/titanic2.jpg",
+            "alt": "Old Ship Sailing with Vast Snowy Mountains Behind"
+        },
+        "title": "David & Goliath ",
+        "location": "Disko Island, Greenland",
+        "date": "15/12/2020",
+        "tags": ["winter","Vintage","frozen","sailing"]
+    },
+    
+    {
+        "img": {
+            "src": "/src/assets/imgs/GalleryCollection/topical-small-boat.jpg",
+            "alt": "Small Boat Sailing next to Tropical Island"
+        },
+        "title": "Hubert",
+        "location": "Bali, Indonesia",
+        "date": "29/04/2019",
+        "tags": ["beach","sailing","tropical","summer"]
+    },
+    
+    {
+        "img": {
+            "src": "/src/assets/imgs/GalleryCollection/twin-iceicles.jpg",
+            "alt": "Two Boats Sailing on Cracked Ice"
+        },
+        "title": "Duel Effort",
+        "location": "Iceland",
+        "date": "08/11/2018",
+        "tags": ["frozen","glow","night","sailing","night"]
+    }
+    
+]
