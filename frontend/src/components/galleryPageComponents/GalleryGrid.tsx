@@ -1,10 +1,13 @@
 import React from 'react'
-import data from '../../assets/data/gallery/imageData.json'
-import type { GalleryItemStructure } from '../../types/types'
 import GridItem from './GridItem'
+import type { GalleryItemStructure } from '../../types/types'
 
-const GalleryGrid = () => {
-  const images: GalleryItemStructure[] = data
+interface props {
+  data: GalleryItemStructure[]
+}
+
+const GalleryGrid = ({data}:props) => {
+
   return (
     <section
       className="
@@ -20,7 +23,7 @@ const GalleryGrid = () => {
           to-transparent
         "
     >
-      {images.map((item, index) => (
+      {data.map((item, index) => (
         <GridItem key={index} data={item} />
       ))}
     </section>

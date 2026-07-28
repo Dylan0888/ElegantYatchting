@@ -1,14 +1,13 @@
 import GridIcon from "./GridIcon";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdCalendarMonth } from "react-icons/md";
-import type { GalleryItemStructure } from "../../types/types";
-
-interface props {
+import type {GalleryItemStructure} from '../../types/types'
+export interface GalleryProps {
     key: number
     data: GalleryItemStructure
 }
 
-const GridItem = ({ data }: props) => {
+const GridItem = ({ data }: GalleryProps) => {
     return (
         <article
             className=" group
