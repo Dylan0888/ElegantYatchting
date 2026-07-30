@@ -3,9 +3,10 @@ import { HiChevronDown } from "react-icons/hi";
 
 interface Props {
   title: string;
+  buttonOptions: string[] 
 }
 
-const FilterButton = ({ title }: Props) => {
+const FilterButton = ({ title, buttonOptions }: Props) => {
   return (
     <div className="dropdown dropdown-center">
       <button
