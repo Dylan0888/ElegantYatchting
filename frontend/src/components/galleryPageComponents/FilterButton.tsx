@@ -1,11 +1,13 @@
 import React from "react";
 
+type FilterCategory = "location" | "date" | "tags"
 interface Props {
-  title: string;
+  title: FilterCategory;
   buttonOptions: string[];
+  handleFilters: (filterType: string, filterValue: string) => void;
 }
 
-const FilterButton = ({ title, buttonOptions }: Props) => {
+const FilterButton = ({ title, buttonOptions, handleFilters }: Props) => {
   return (
     <select
       defaultValue={title}
@@ -27,10 +29,11 @@ const FilterButton = ({ title, buttonOptions }: Props) => {
         hover:text-gold
         hover:shadow-xl
       "
+      onChange={(e) => handleFilters(title, e.target.value)}
     >
       {/* Placeholder */}
 
-      <option disabled>
+      <option className="uppercase" disabled value={title}>
         {title}
       </option>
 

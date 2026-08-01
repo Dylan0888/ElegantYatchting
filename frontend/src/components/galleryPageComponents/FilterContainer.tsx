@@ -1,5 +1,6 @@
 import FilterButton from "./FilterButton";
 import type { GalleryItemStructure } from "../../types/types";
+import { useState, useEffect } from "react";
 interface props {
   data: GalleryItemStructure[],
   setList: React.Dispatch<React.SetStateAction<GalleryItemStructure[]>>
@@ -14,30 +15,51 @@ interface props {
 
 const FilterContainer = ({ data, setList }: props) => {
 
+  const [selectedFilters, setFilters] = useState({
+    location: "",
+    date: "",
+    tags: "",
+  });
+
+  // Updated UseState filters 
+  const handleFilterChange = (filterType: string, filterValue: string) => {
+    setFilters((prevFilters) => ({...prevFilters, [filterType]: filterValue}));
+  }
+
+  // test useEffect to see if the filters are stored correctly 
+  useEffect(() => {
+    console.log("Selected Filters: ", selectedFilters);
+  }, [selectedFilters]);
+
+
+
+
+
+
 
 
   // Year Sort options 
 
-  const dateSortOptions = [
-    {
-      label: "Most Recent Voyage",
-      func: (d: GalleryItemStructure[]) =>
-        [...d].sort(
-          (a, b) =>
-            new Date(b.date).getTime() -
-            new Date(a.date).getTime()
-        ),
-    },
-    {
-      label: "Earliest Voyage",
-      func: (d: GalleryItemStructure[]) =>
-        [...d].sort(
-          (a, b) =>
-            new Date(a.date).getTime() -
-            new Date(b.date).getTime()
-        ),
-    },
-  ];
+  // const dateSortOptions = [
+  //   {
+  //     label: "Most Recent Voyage",
+  //     func: (d: GalleryItemStructure[]) =>
+  //       [...d].sort(
+  //         (a, b) =>
+  //           new Date(b.date).getTime() -
+  //           new Date(a.date).getTime()
+  //       ),
+  //   },
+  //   {
+  //     label: "Earliest Voyage",
+  //     func: (d: GalleryItemStructure[]) =>
+  //       [...d].sort(
+  //         (a, b) =>
+  //           new Date(a.date).getTime() -
+  //           new Date(b.date).getTime()
+  //       ),
+  //   },
+  // ];
 
 
   // reusable functions to pull info from the gallery data - used for storing all locations, tags and only the years found in the data
@@ -74,9 +96,21 @@ const FilterContainer = ({ data, setList }: props) => {
 
   return (
     <section className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-4 px-6 py-10">
-      <FilterButton title="Location" buttonOptions={availableLocations} />
-      <FilterButton title="Year" buttonOptions={availableYears}/>
-      <FilterButton title="Category" buttonOptions={availableTags}/>
+      <FilterButton 
+        title="location" 
+        buttonOptions={availableLocations} 
+        handleFilters={handleFilterChange}
+      />
+      <FilterButton 
+        title="date" 
+        buttonOptions={availableYears} 
+        handleFilters={handleFilterChange}
+      />
+      <FilterButton 
+        title="tags" 
+        buttonOptions={availableTags} 
+        handleFilters={handleFilterChange}
+      />
     </section>
   );
 };
