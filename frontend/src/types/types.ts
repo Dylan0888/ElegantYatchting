@@ -73,18 +73,4 @@ export type promoBanner = {
     img: string
 }
 
-{
-  /* --- Gallery Page Types --- */
-}
 
-export interface GalleryItemStructure {
-    img: {
-        src: string
-        alt: string
-    },
-    title: string,
-    location: string,
-    date: string,
-    tags: string[]
-
-}

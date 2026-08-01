@@ -1,6 +1,5 @@
 import React from "react";
-
-type FilterCategory = "location" | "date" | "tags"
+import type { FilterCategory } from "../../types/galleryTypes";
 interface Props {
   title: FilterCategory;
   buttonOptions: string[];

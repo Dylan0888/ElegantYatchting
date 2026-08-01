@@ -1,25 +1,21 @@
 import FilterButton from "./FilterButton";
-import type { GalleryItemStructure } from "../../types/types";
-import { useState, useEffect } from "react";
+import type { GalleryItemStructure } from "../../types/galleryTypes";
+import {  useEffect } from "react";
+import type {filters} from '../../types/galleryTypes'
+import { getCategoryData } from "./galFunctions";
 interface props {
   data: GalleryItemStructure[],
-  setList: React.Dispatch<React.SetStateAction<GalleryItemStructure[]>>
+  //setList: React.Dispatch<React.SetStateAction<GalleryItemStructure[]>>
+  filterState:{
+    selectedFilters: filters
+    setFilters: React.Dispatch<React.SetStateAction<filters>>
+  }
 }
+const FilterContainer = ({ data, filterState }: props) => {
+  
+  // Destructure the filterState prop to get selectedFilters and setFilters
+  const { selectedFilters, setFilters } = filterState;
 
-// interface filterButtons {
-//   name: string
-//   func: function name(params:type) {
-
-//   }
-// }
-
-const FilterContainer = ({ data, setList }: props) => {
-
-  const [selectedFilters, setFilters] = useState({
-    location: "",
-    date: "",
-    tags: "",
-  });
 
   // Updated UseState filters 
   const handleFilterChange = (filterType: string, filterValue: string) => {
@@ -31,7 +27,10 @@ const FilterContainer = ({ data, setList }: props) => {
     console.log("Selected Filters: ", selectedFilters);
   }, [selectedFilters]);
 
-
+  // Gets all category data from the gallery data to populate the filter buttons
+  const availableYears = getCategoryData(data, "date")
+  const availableLocations = getCategoryData(data, "location")
+  const availableTags = getCategoryData(data, "tags")
 
 
 
@@ -60,38 +59,6 @@ const FilterContainer = ({ data, setList }: props) => {
   //       ),
   //   },
   // ];
-
-
-  // reusable functions to pull info from the gallery data - used for storing all locations, tags and only the years found in the data
-  type FilterCategory = "location" | "date" | "tags"
-
-  const getCategoryData = (imgInfo: GalleryItemStructure[], category: FilterCategory) => {
-    const categoryInfo = new Set<string>(); // Creates unique set and returns it
-    
-    // Adds to set depending on specified category
-    imgInfo.forEach((item) => {
-      switch (category) {
-        case "location":
-          categoryInfo.add(item.location);
-          break;
-        case "date":
-          categoryInfo.add(item.date.split("/")[2].trim());
-          break;
-        case "tags":
-          item.tags.forEach((tag) => categoryInfo.add(tag))
-          break;
-        default:
-          console.log("Sorry this category does not exist!");
-      }    
-    });
-    return [...categoryInfo];
-  };
-
-  const availableYears = getCategoryData(data, "date")
-  const availableLocations = getCategoryData(data, "location")
-  const availableTags = getCategoryData(data, "tags")
-  // ------------------------------------------- // 
-
 
 
   return (
