@@ -25,6 +25,13 @@ const GalleryPage = () => {
     setFilters: setFilters
   }
 
+
+ // Based on selected filters change, filter the image list to only show images that match the selected filters
+  // use a use effect to watch for changes in the selectedFilters state and update the imgList state accordingly
+
+
+
+
   return (
    <>
     <Nav />

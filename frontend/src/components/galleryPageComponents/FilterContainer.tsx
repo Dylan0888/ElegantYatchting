@@ -27,12 +27,13 @@ const FilterContainer = ({ data, filterState }: props) => {
     console.log("Selected Filters: ", selectedFilters);
   }, [selectedFilters]);
 
-  // Gets all category data from the gallery data to populate the filter buttons
-  const availableYears = getCategoryData(data, "date")
-  const availableLocations = getCategoryData(data, "location")
-  const availableTags = getCategoryData(data, "tags")
+  // Gets all category data from the gallery data to populate the filter buttons and apply basic sorting to the data for better UX
 
-
+  const availableYears = 
+    getCategoryData(data, "date").sort(
+      (a:string,b:string): number => parseInt(b) - parseInt(a)); 
+  const availableLocations = getCategoryData(data, "location").sort();
+  const availableTags = getCategoryData(data, "tags").sort();
 
 
 
