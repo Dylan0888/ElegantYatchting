@@ -6,11 +6,11 @@ import Hero from '../components/galleryPageComponents/Hero'
 import data from '../assets/data/gallery/imageData.json'
 import type { GalleryItemStructure } from '../types/galleryTypes'
 import { useState, useMemo } from 'react'
-import type {filters} from '../types/galleryTypes'
+import type { filters } from '../types/galleryTypes'
 
 const GalleryPage = () => {
-  const imgData: GalleryItemStructure[] = data
-  
+  const itemData: GalleryItemStructure[] = data
+
   // const [imgList, setImageList] = useState<GalleryItemStructure[]>(imgData)
 
   const [selectedFilters, setFilters] = useState<filters>({
@@ -20,15 +20,15 @@ const GalleryPage = () => {
   });
 
   // Packs filter state for props 
-  const filterState ={
+  const filterState = {
     selectedFilters,
     setFilters
   }
 
-  
+
   // Memoized filtered image list based on selected filters
   const imgList = useMemo((): GalleryItemStructure[] => {
-    let filteredList = imgData
+    let filteredList = itemData
 
     if (selectedFilters.location) {
       filteredList = filteredList.filter((item) => item.location === selectedFilters.location)
@@ -43,21 +43,21 @@ const GalleryPage = () => {
     }
     return filteredList
 
-  }, [selectedFilters, imgData])
+  }, [selectedFilters, itemData])
+
+  // checks if any filters are selected for conditional rendering
+
+  const filterCheck = Boolean((selectedFilters.location || selectedFilters.date || selectedFilters.tags))
 
 
-  // do some form of checking to grey out or disable filter buttons that have no results in the current filtered list.
-  
-
-
-
+  //! do some form of checking to grey out or disable filter buttons that have no results in the current filtered list.
 
   return (
     <>
       <Nav />
       <Hero />
       <div className="gallery-page">
-        <FilterContainer data={imgData} filterState={filterState} />
+        <FilterContainer data={itemData} filterState={filterState} filterCheck={filterCheck} />
         <GalleryGrid data={imgList} />
       </div>
       <Footer />

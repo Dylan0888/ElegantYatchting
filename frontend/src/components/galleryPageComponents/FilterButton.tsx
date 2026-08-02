@@ -4,12 +4,13 @@ interface Props {
   title: FilterCategory;
   buttonOptions: string[];
   handleFilters: (filterType: string, filterValue: string) => void;
+  value?: string;
 }
 
-const FilterButton = ({ title, buttonOptions, handleFilters }: Props) => {
+const FilterButton = ({ title, buttonOptions, handleFilters, value }: Props) => {
   return (
     <select
-      defaultValue={title}
+      value={value || title}
       className="
         select
         h-12
@@ -30,8 +31,7 @@ const FilterButton = ({ title, buttonOptions, handleFilters }: Props) => {
       "
       onChange={(e) => handleFilters(title, e.target.value)}
     >
-      {/* Placeholder */}
-
+    
       <option className="uppercase" disabled value={title}>
         {title}
       </option>
