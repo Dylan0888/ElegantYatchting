@@ -35,7 +35,7 @@ const GalleryPage = () => {
     }
 
     if (selectedFilters.date) {
-      filteredList = filteredList.filter((item) => item.date === selectedFilters.date)
+      filteredList = filteredList.filter((item) => item.date.split("/")[2].trim() === selectedFilters.date)
     }
 
     if (selectedFilters.tags) {
@@ -46,11 +46,16 @@ const GalleryPage = () => {
   }, [selectedFilters, itemData])
 
   // checks if any filters are selected for conditional rendering
-
   const filterCheck = Boolean((selectedFilters.location || selectedFilters.date || selectedFilters.tags))
 
 
   //! do some form of checking to grey out or disable filter buttons that have no results in the current filtered list.
+  // use imgList to check if any of the filter options are present in the current filtered list and disable the button if not.
+
+  //item data = data from json file 
+  //imgList = filtered list based on selected filters 
+  //selectedFilters = current selected filters
+
 
   return (
     <>

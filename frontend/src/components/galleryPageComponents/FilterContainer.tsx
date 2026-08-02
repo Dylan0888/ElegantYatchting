@@ -30,32 +30,7 @@ const FilterContainer = ({ data, filterState, filterCheck }: props) => {
       (a:string,b:string): number => parseInt(b) - parseInt(a)); 
   const availableLocations = getCategoryData(data, "location").sort();
   const availableTags = getCategoryData(data, "tags").sort();
-
-  // Year Sort options 
-
-  // const dateSortOptions = [
-  //   {
-  //     label: "Most Recent Voyage",
-  //     func: (d: GalleryItemStructure[]) =>
-  //       [...d].sort(
-  //         (a, b) =>
-  //           new Date(b.date).getTime() -
-  //           new Date(a.date).getTime()
-  //       ),
-  //   },
-  //   {
-  //     label: "Earliest Voyage",
-  //     func: (d: GalleryItemStructure[]) =>
-  //       [...d].sort(
-  //         (a, b) =>
-  //           new Date(a.date).getTime() -
-  //           new Date(b.date).getTime()
-  //       ),
-  //   },
-
-  // ];
-
-     
+ 
 
   return (
     <section className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-4 px-6 py-10">
