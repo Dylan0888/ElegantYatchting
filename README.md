@@ -5,7 +5,7 @@ The project focuses on creating a polished, component-driven frontend while demo
 
 ## Live Preview 
 
-
+(coming soon)
 
 ## Features 
 - Modern luxury-inspired responsive design
