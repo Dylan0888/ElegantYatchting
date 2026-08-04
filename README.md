@@ -76,7 +76,11 @@ src/
 |     └── Nav.tsx
 |
 ├── pages/ 
-│
+│     ├── HomePage.tsx
+|     ├── GalleryPage.tsx
+|     .... 
+|
+|
 ├── types/
 |    ├── aboutTypes.ts  // Page specific types 
 |    ├── galleryTypes.ts
