@@ -1,13 +1,15 @@
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import TourGrid from '../components/TourComponents/TourGrid'
+import TourHero from '../components/TourComponents/TourHero'
 
 const ToursPage = () => {
   return (
     <>
       <Nav />
       <div className="tours-page">
-        <h1>Tours Page</h1>
-        <p>Welcome to the Tours Page! Here you can find information about our available tours.</p>
+        <TourHero />
+        <TourGrid />
       </div>
       <Footer />
     </>
