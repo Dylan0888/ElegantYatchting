@@ -26,15 +26,12 @@ The project focuses on creating a polished, component-driven frontend while demo
 - React
 - TypeScript
 - Vite
- 
 ### Styling
 - Tailwind CSS v4
 - DaisyUI
 - React Icons
-
 ### Routing
 - React Router
-
 ### Data
 - JSON
 - Development Tools
